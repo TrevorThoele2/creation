@@ -1,0 +1,93 @@
+
+load m_Utility;
+
+load m_SpeechGraph
+load m_SpeechInput
+load m_SpeechBranch
+load m_SpeechSwitch
+load m_SpeechRandomSwitch
+
+// Prototypes should be a list of outputs or a single output
+// If part is nil, then this WILL NOT add the part to anything, and will return the part that this makes
+// Otherwise it WILL add the new part to the given part and return the given part
+function CreateFromPrototypes(part, prototypes)
+	// Handle nil type
+	if IsNil(prototypes) : return part;
+	
+	// Handle with part
+	if not IsNil(part)
+		// Handle non-list
+		if not IsClass(prototypes, List)
+			part.AddPart(prototypes);
+			return part;
+		end
+		
+		// "Unpack" the list
+		if prototypes.len() == 1
+			part.AddPart(prototypes.first);
+		elif prototypes.len() > 1
+			part.AddPart(SpeechRandomSwitch(prototypes));
+		end
+		
+		return part;
+	end
+	
+	// Handle without part
+	// Handle non-list
+	if not IsClass(prototypes, List) : return prototypes;
+	
+	// "Unpack" the list
+	if prototypes.len() == 1
+		return prototypes.first;
+	elif prototypes.len() > 1
+		return SpeechRandomSwitch(prototypes);
+	end
+	
+	return prototypes;
+end
+
+// Innkeeper flags
+enum InnkeeperFlags
+	NOT_ENOUGH_GOLD
+	OK
+end
+
+// Determiner for innkeeper cost
+class Determiner(cost)
+	function __call()
+		def avatarComponent = AtmosEntity_GetAvatar().GetComponent(AtmosEntity_ComponentType.Avatar);
+		if(self._cost > avatarComponent.GetGold()) : return InnkeeperFlags.NOT_ENOUGH_GOLD;
+		
+		return InnkeeperFlags.OK;
+	end
+	
+	_cost = cost;
+end
+
+// Greetings, notEnoughGold, worked, onNo: lists of SpeechOutput
+// Ask, yes, no: string
+function SimpleInnkeeperSpeech(cost, greetings, ask, yes, no, notEnoughGold, worked, onNo)
+	// Introductory outputs
+	def graph = SpeechGraph();
+	CreateFromPrototypes(graph, greetings);
+	
+	// Now comes input
+	def input = SpeechInput(nil, ask);
+	graph.AddPart(input);
+	
+	// Add yes branch to input
+	def mySwitch = SpeechSwitch(Determiner(cost),
+	[
+		InnkeeperFlags.NOT_ENOUGH_GOLD => CreateFromPrototypes(SpeechBranch(), notEnoughGold),
+		InnkeeperFlags.OK => CreateFromPrototypes(SpeechBranch(), worked)
+	])
+	input.AddPart(Atmos_Pair(yes, SpeechBranch(mySwitch)));
+	
+	// Player says no
+	// Add no branch to input
+	input.AddPart(Atmos_Pair(no, CreateFromPrototypes(SpeechBranch(), onNo)));
+	
+	graph();
+end
+
+export SimpleInnkeeperSpeech;

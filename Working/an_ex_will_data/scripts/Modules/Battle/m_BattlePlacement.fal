@@ -1,0 +1,99 @@
+
+load m_BattleLogic;
+		 
+class BattlePlacement from BattleLogic
+	function SetPositions(set)
+		self._positions = set;
+	end
+	
+	function GetPositions()
+		return self._positions;
+	end
+	
+	function SetPlayersToPlace(set)
+		self._playersToPlace = set;
+	end
+
+	function _StartImpl()
+		def baseModulator = self._CreateBaseModulator();
+		
+		self._placementEntities = arrayBuffer(self._positions.len());
+		
+		def curIndex = 0;
+		for curPosition in self._positions
+			def madeEntity = AtmosEntity_Create(self._placementEntityBaseName + curIndex.toString(), curPosition, AtmosPosition_Direction.Down);
+			self._placementEntities[curIndex] = madeEntity;
+			
+			def senseComponent = madeEntity.CreateComponent(AtmosEntity_ComponentType.Sense);
+			def sprite = senseComponent.CreateSprite();
+			sprite.SetMaterial("Particle");
+			sprite.SetZOffset(0.5);
+			
+			def modulator = baseModulator.Replicate();
+			sprite.StartModulatorWith(modulator);
+			
+			++curIndex;
+		end
+		
+		baseModulator.Detach();
+	end
+	
+	function _StopImpl()
+		for curEntity in self._placementEntities : AtmosEntity_Destroy(curEntity);
+	end
+	
+	function _OnLeftMouseButtonPressedImpl()
+		def mousePosition = self.GetMousePosition();
+		def gridPosition = mousePosition.ConvertToGridPosition(0);
+		
+		if AtmosTile_Exists(gridPosition) and self._HasPosition(gridPosition)
+			def nextToPlace = arrayHead(self._playersToPlace);
+			self._Place(nextToPlace, gridPosition);
+		end
+	end
+	
+	function _IsDoneImpl()
+		return self._playersToPlace.len() <= 0;
+	end
+	
+	function _Place(entity, at)
+		entity.CreateComponent(AtmosEntity_ComponentType.Battle);
+		entity.MoveInstant(at);
+		senseComponent = entity.GetComponent(AtmosEntity_ComponentType.Sense);
+		senseComponent.Enable();
+	end
+	
+	function _HasPosition(checkFor)
+		for position in self._positions
+			if position == checkFor : return true;
+		end
+		
+		return false;
+	end
+	
+	function _CreateBaseModulator()
+		def modulator = AtmosModulator_Create(AtmosModulator_Type.SpriteOffset);
+		modulator.SetLooped(true);
+
+		trackAlpha = modulator.CreateTrack(AtmosModulator_TrackType.ColorA);
+		trackAlpha.SetDefaultStartValue(50);
+
+		def nodeAlpha = trackAlpha.CreateNode();
+		nodeAlpha.SetEndState(127);
+		nodeAlpha.SetTimeTaken(AtmosTime_Value(Atmos_FixedPoint.FromDecimal(1.0), AtmosTime_Epoch.Seconds));
+
+		nodeAlpha = trackAlpha.CreateNode();
+		nodeAlpha.SetEndState(50);
+		nodeAlpha.SetTimeTaken(AtmosTime_Value(Atmos_FixedPoint.FromDecimal(1.0), AtmosTime_Epoch.Seconds));
+
+		return modulator;
+	end
+	
+	_positions = nil;
+	_playersToPlace = nil;
+	
+	_placementEntities = nil;
+	_placementEntityBaseName = "BattlePlacementEntity_";
+end
+
+export BattlePlacement;

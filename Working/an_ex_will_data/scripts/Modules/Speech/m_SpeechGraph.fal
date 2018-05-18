@@ -1,0 +1,34 @@
+
+load m_SpeechBranch;
+
+class SpeechGraph(parts)
+	// Executes the current part of the branch
+	function __call()
+		self._branch();
+	end
+	
+	function Reset()
+		self._branch.Reset();
+	end
+	
+	function AddPart(part)
+		return self._branch.AddPart(part);
+	end
+	
+	function Size()
+		return self._branch.Size();
+	end
+	
+	// Part must be an iterator
+	function SkipTo(part)
+		self._branch.SkipTo(part);
+	end
+	
+	function CreateLoop(part)
+		return self._branch.CreateLoop(part);
+	end
+	
+	_branch = SpeechBranch(parts);
+end
+
+export SpeechGraph;

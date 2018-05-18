@@ -1,0 +1,2679 @@
+{
+    "inscriptionVersion": 0,
+    "clientVersion": 0,
+    "fields": [
+        [
+            0,
+            {
+                "id": 0,
+                "entities": [
+                    {
+                        "constructor": {
+                            "assetName": "field0",
+                            "executeName": "main",
+                            "parameters": [
+                            ]
+                        },
+                        "name": "field",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "solid": false
+                    },
+                    {
+                        "constructor": {
+                            "assetName": "",
+                            "executeName": "",
+                            "parameters": [
+                            ]
+                        },
+                        "name": "avatar",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "solid": true
+                    }
+                ],
+                "entityBoundary": [
+                ],
+                "terrain": [
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 16,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 48,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 48,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 48,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 48,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 80,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 80,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 80,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 80,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 112,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 112,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 112,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 112,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 16,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 16,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 16,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 1,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 1,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 1,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "mahogany",
+                            "assetIndex": 1,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 144,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 144,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 144,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 144,
+                                "z": 1
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 16,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 48,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 80,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 112,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 16,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 112,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 176,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 144,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 240,
+                                "y": 48,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": 208,
+                                "y": 80,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 240,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 144,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -16,
+                                "y": 176,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -80,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -112,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    },
+                    {
+                        "imageCore": {
+                            "asset": "plant",
+                            "assetIndex": 0,
+                            "color": {
+                                "alpha": 255,
+                                "red": 255,
+                                "green": 255,
+                                "blue": 255
+                            },
+                            "material": ""
+                        },
+                        "bounds": {
+                            "position": {
+                                "x": -48,
+                                "y": 208,
+                                "z": 0
+                            },
+                            "scalers": {
+                                "x": 1,
+                                "y": 1
+                            },
+                            "rotation": 0
+                        }
+                    }
+                ]
+            }
+        ]
+    ],
+    "assets": {
+        "actionAssets": [
+            {
+                "name": "MoveLeft",
+                "defaultKey": 5,
+                "defaultModifierKeys": [
+                ]
+            },
+            {
+                "name": "MoveUp",
+                "defaultKey": 27,
+                "defaultModifierKeys": [
+                ]
+            },
+            {
+                "name": "MoveRight",
+                "defaultKey": 8,
+                "defaultModifierKeys": [
+                ]
+            },
+            {
+                "name": "MoveDown",
+                "defaultKey": 23,
+                "defaultModifierKeys": [
+                ]
+            }
+        ],
+        "audioAssets": [
+            {
+                "filePath": "7 Billion People.ogg"
+            }
+        ],
+        "imageAssets": [
+            {
+                "filePath": "character.png",
+                "columns": 16,
+                "rows": 16
+            },
+            {
+                "filePath": "test_chroma.png",
+                "columns": 16,
+                "rows": 16
+            },
+            {
+                "filePath": "mahogany.png",
+                "columns": 16,
+                "rows": 16
+            },
+            {
+                "filePath": "plant.png",
+                "columns": 16,
+                "rows": 16
+            }
+        ],
+        "imageMaterialAssets": [
+        ],
+        "lineMaterialAssets": [
+        ],
+        "regionMaterialAssets": [
+        ],
+        "scriptAssets": [
+            {
+                "filePath": "field0.as"
+            }
+        ],
+        "scriptModuleAssets": [
+            {
+                "filePath": "modules\\modulation\\modulation_modulator.as"
+            },
+            {
+                "filePath": "modules\\modulation\\modulation_interpolation.as"
+            },
+            {
+                "filePath": "modules\\modulation\\modulation_node.as"
+            },
+            {
+                "filePath": "modules\\assets.as"
+            },
+            {
+                "filePath": "modules\\audio\\audio_loop_sound.as"
+            },
+            {
+                "filePath": "modules\\fused_bounds.as"
+            },
+            {
+                "filePath": "modules\\audio\\audio_music.as"
+            },
+            {
+                "filePath": "modules\\lazy.as"
+            },
+            {
+                "filePath": "modules\\entity\\entity_character.as"
+            },
+            {
+                "filePath": "modules\\action_stabilizer.as"
+            },
+            {
+                "filePath": "modules\\entity\\entity_avatar.as"
+            },
+            {
+                "filePath": "modules\\camera.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_wander.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_should_move.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_should_move_interval.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_should_move_random.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_patrol.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_should_move_always.as"
+            },
+            {
+                "filePath": "modules\\entity\\entity_character_direction.as"
+            },
+            {
+                "filePath": "modules\\entity\\ai\\entity_ai_path.as"
+            },
+            {
+                "filePath": "modules\\spatial\\spatial_grid_cell_size.as"
+            }
+        ],
+        "shaderAssets": [
+        ]
+    }
+}

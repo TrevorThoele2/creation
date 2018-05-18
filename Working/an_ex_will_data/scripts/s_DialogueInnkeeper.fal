@@ -1,0 +1,16 @@
+
+load m_SpeechInnkeeper;
+load m_SpeechOutput;
+
+def endingWait = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(10.0), AtmosTime_Epoch.Seconds);
+
+def cost = 50;
+def greetings = SpeechOutput("Hello, friend, innkeeper here.", 1, 10, true, endingWait);
+def ask = "Would you like to rest here?";
+def yes = "Yes";
+def no = "No";
+def notEnoughGold = SpeechOutput("You don't have enough gold :C", 1, 10, true, endingWait);
+def worked = SpeechOutput("Enjoy, friend", 1, 10, true, endingWait);
+def onNo = SpeechOutput("FINE", 1, 10, true, endingWait);
+
+SimpleInnkeeperSpeech(cost, greetings, ask, yes, no, notEnoughGold, worked, onNo);

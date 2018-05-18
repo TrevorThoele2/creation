@@ -1,0 +1,18 @@
+
+load m_SpeechShopkeeper;
+load m_SpeechOutput;
+
+def endingWait = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(10.0), AtmosTime_Epoch.Seconds);
+def greeting = SpeechOutput("Hello", 1, 10, true, endingWait);
+def enter = "What would you like to do?";
+def buy = "Buy";
+def sell = "Sell";
+def leave = "Leave";
+def onNoItems = SpeechOutput("YOU HAVE NO ITEMS YOU SILLY MAN", 1, 10, true, endingWait);
+def onLeave = SpeechOutput("Goodbye then :<", 1, 10, true, endingWait);
+def onEnterBuy = SpeechOutput("Here is the buy", 1, 10, true, endingWait);
+def onEnterSell = SpeechOutput("Here is the sell", 1, 10, true, endingWait);
+def buySuccess = SpeechOutput("HOPE YOU ENJOY WHAT YOU BOUGHT", 1, 10, true, endingWait);
+def sellSuccess = SpeechOutput("I WILL ENJOY WHAT I BOUGHT", 1, 10, true, endingWait);
+
+SimpleShopkeeperSpeech(greeting, enter, buy, sell, leave, onNoItems, onLeave, onEnterBuy, onEnterSell, buySuccess, sellSuccess);

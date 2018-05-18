@@ -1,0 +1,145 @@
+
+class Animation(start, stop)
+	startIndex = start;
+	stopIndex = stop;
+end
+
+function CommonLinearMovement(timeTaken, leftAnim, upAnim, rightAnim, downAnim)
+	entity = Atmos_Caller.GetEntity();
+	senseComponent = entity.FindComponent(AtmosEntity_ComponentType.Sense);
+	
+	if not senseComponent.HasStagedDirection()
+		return;
+	end
+	
+	stagedDirection = senseComponent.GetStagedDirection();
+
+	// Create sprite modulator for animation
+	pickedAnimation = nil;
+	if stagedDirection == AtmosPosition_Direction.Left
+		pickedAnimation = leftAnim;
+	elif stagedDirection == AtmosPosition_Direction.Up
+		pickedAnimation = upAnim;
+	elif stagedDirection == AtmosPosition_Direction.Right
+		pickedAnimation = rightAnim;
+	elif stagedDirection == AtmosPosition_Direction.Down
+		pickedAnimation = downAnim;
+	end
+	
+	if not senseComponent.HasStagedPosition()
+		// Just change the direction if no staged position
+		sprite = senseComponent.FindSprite(-1);
+		sprite.SetIndex(pickedAnimation.stopIndex);
+		entity.SetDirection(stagedDirection);
+		return;
+	end
+	
+	spriteModulator = AtmosModulator_Create(AtmosModulator_Type.SpriteOffset);
+	
+	trackIndex = spriteModulator.CreateTrack(AtmosModulator_TrackType.Index);
+	trackIndex.SetDefaultStartValue(pickedAnimation.startIndex);
+	
+	nodeIndex = trackIndex.CreateNode();
+	nodeIndex.SetEndState(pickedAnimation.stopIndex);
+	nodeIndex.SetTimeTaken(timeTaken);
+	
+	sprite = senseComponent.FindSprite(-1);
+	sprite.StartModulatorWith(spriteModulator);
+	
+	// Create sense component modulator for movement
+	stagedPosition = senseComponent.GetStagedPosition();
+	
+	senseModulator = AtmosModulator_Create(AtmosModulator_Type.SenseComponent);
+	
+	trackX = senseModulator.CreateTrack(AtmosModulator_TrackType.PositionX);
+	trackY = senseModulator.CreateTrack(AtmosModulator_TrackType.PositionY);
+	
+	nodeX = trackX.CreateNode();
+	nodeX.SetEndState(stagedPosition.x);
+	nodeX.SetTimeTaken(timeTaken);
+	
+	nodeY = trackY.CreateNode();
+	nodeY.SetEndState(stagedPosition.y);
+	nodeY.SetTimeTaken(timeTaken);
+	
+	// Complete the movement setup
+	movementComponent = entity.FindComponent(AtmosEntity_ComponentType.Movement);
+	movementComponent.CompleteMovementSetup(senseModulator);
+end
+
+function CommonLinearMovementComplex(timeTaken, leftAnim, upAnim, rightAnim, downAnim)
+	entity = Atmos_Caller.GetEntity();
+	senseComponent = entity.FindComponent(AtmosEntity_ComponentType.Sense);
+	
+	if not senseComponent.HasStagedPosition() and not senseComponent.HasStagedDirection()
+		return;
+	end
+	
+	stagedDirection = senseComponent.GetStagedDirection();
+	
+	if not senseComponent.HasStagedPosition()
+		// Just change the direction if no staged position
+		sprite = senseComponent.FindSprite(-1);
+		sprite.SetIndex(stagedDirection);
+		return;
+	end
+	
+	stagedPosition = senseComponent.GetStagedPosition();
+
+	// Create sprite modulator for animation
+	pickedAnimation = nil;
+	if stagedDirection == AtmosPosition_Direction.Left
+		pickedAnimation = leftAnim;
+	elif stagedDirection == AtmosPosition_Direction.Up
+		pickedAnimation = upAnim;
+	elif stagedDirection == AtmosPosition_Direction.Right
+		pickedAnimation = rightAnim;
+	elif stagedDirection == AtmosPosition_Direction.Down
+		pickedAnimation = downAnim;
+	end
+	
+	spriteModulator = AtmosModulator_Create(AtmosModulator_Type.SpriteOffset);
+	
+	trackIndex = spriteModulator.CreateTrack(AtmosModulator_TrackType.Index);
+	trackIndex.SetDefaultStartValue(pickedAnimation.startIndex);
+	
+	nodeIndex = trackIndex.CreateNode();
+	nodeIndex.SetEndState(pickedAnimation.stopIndex);
+	nodeIndex.SetTimeTaken(timeTaken);
+	
+	trackAlpha = spriteModulator.CreateTrack(AtmosModulator_TrackType.ColorA);
+	trackAlpha.SetDefaultStartValue(255);
+	
+	alphaTimeTaken = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(1), AtmosTime_Epoch.Seconds);
+	nodeAlpha = trackAlpha.CreateNode();
+	nodeAlpha.SetEndState(0);
+	nodeAlpha.SetTimeTaken(alphaTimeTaken);
+	nodeAlpha2 = trackAlpha.CreateNode();
+	nodeAlpha2.SetEndState(255);
+	nodeAlpha2.SetTimeTaken(alphaTimeTaken);
+	
+	sprite = senseComponent.FindSprite(-1);
+	sprite.StartModulatorWith(spriteModulator);
+	
+	// Create sense component modulator for movement
+	senseModulator = AtmosModulator_Create(AtmosModulator_Type.SenseComponent);
+	
+	trackX = senseModulator.CreateTrack(AtmosModulator_TrackType.PositionX);
+	trackY = senseModulator.CreateTrack(AtmosModulator_TrackType.PositionY);
+	
+	nodeX = trackX.CreateNode();
+	nodeX.SetEndState(stagedPosition.x);
+	nodeX.SetTimeTaken(timeTaken);
+	
+	nodeY = trackY.CreateNode();
+	nodeY.SetEndState(stagedPosition.y);
+	nodeY.SetTimeTaken(timeTaken);
+	
+	// Complete the movement setup
+	movementComponent = entity.FindComponent(AtmosEntity_ComponentType.Movement);
+	movementComponent.CompleteMovementSetup(senseModulator);
+end
+
+export Animation;
+export CommonLinearMovement;
+export CommonLinearMovementComplex;

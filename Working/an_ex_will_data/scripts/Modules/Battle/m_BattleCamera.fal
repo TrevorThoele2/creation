@@ -1,0 +1,74 @@
+
+class BattleCamera
+	function Start(movePosition)
+		AtmosCamera_MoveInstant(movePosition);
+	
+		subscribe("AtmosInput_OnActionActive", self._OnActionActive);
+		subscribe("AtmosInput_OnMouseButtonDoublePressed", self._OnMouseButtonDoublePressed);
+		subscribe("AtmosInput_OnMouseClickDragged", self._OnMouseClickDragged);
+	end
+	
+	function Stop()
+		unsubscribe("AtmosInput_OnMouseClickDragged", self._OnMouseClickDragged);
+		unsubscribe("AtmosInput_OnMouseButtonDoublePressed", self._OnMouseButtonDoublePressed);
+		unsubscribe("AtmosInput_OnActionActive", self._OnActionActive);
+	end
+
+	_panSpeed = 500;
+	
+	function _OnActionActive(action)
+		def moveLeft = AtmosInput_Action.MoveLeft;
+		def moveUp = AtmosInput_Action.MoveUp;
+		def moveRight = AtmosInput_Action.MoveRight;
+		def moveDown = AtmosInput_Action.MoveDown;
+	
+		switch action
+			case moveLeft : self._Move(AtmosPosition_Direction.Left);
+			case moveUp : self._Move(AtmosPosition_Direction.Up);
+			case moveRight : self._Move(AtmosPosition_Direction.Right);
+			case moveDown : self._Move(AtmosPosition_Direction.Down);
+		end
+	end
+	
+	function _OnMouseButtonDoublePressed(button)
+		if button != AtmosInput_MouseButton.Left : return;
+		
+		def cameraPosition = self._GetPosition();
+		def mousePosition = BattleManager.GetMousePosition();
+		
+		def xDifference = mousePosition.x - cameraPosition.x;
+		def yDifference = mousePosition.y - cameraPosition.y;
+		
+		if xDifference == 0 and yDifference == 0 : return;
+		
+		def timeTaken = 1;
+		def modulator = AtmosModulator_Create(AtmosModulator_Type.Camera);
+		
+		def AttemptCreateTrack = { difference, trackType, coordinate =>
+			if difference == 0 : return;
+		
+			def track = modulator.CreateTrack(trackType);
+			def node = track.CreateNode();
+			node.SetInterpolationSmoothstep();
+			node.SetEndState(coordinate);
+			node.SetTimeTaken(AtmosTime_Value(Atmos_FixedPoint.FromDecimal(1), AtmosTime_Epoch.Seconds));
+		};
+		
+		AttemptCreateTrack(xDifference, AtmosModulator_TrackType.PositionX, mousePosition.x);
+		AttemptCreateTrack(yDifference, AtmosModulator_TrackType.PositionY, mousePosition.y);
+		
+		AtmosCamera_ModulatePosition(modulator);
+	end
+	
+	function _OnMouseClickDragged(delta)
+		AtmosCamera_MoveBy(delta.first, delta.second, 0);
+	end
+	
+	function _Move(direction)
+		AtmosCamera_MoveDirection(direction, self._panSpeed);
+	end
+	
+	function _GetPosition() : return AtmosCamera_GetPosition();
+end
+
+export BattleCamera;

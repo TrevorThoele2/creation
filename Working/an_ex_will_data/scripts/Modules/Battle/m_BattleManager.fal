@@ -1,0 +1,75 @@
+
+load m_BattlePlacement;
+load m_BattleMovement;
+load m_BattleAttack;
+load m_BattleAbility;
+load m_BattleCamera;
+
+load m_PositionUtility;
+
+object BattleManager
+	function SetPositions(set)
+		self._placement.SetPositions(set);
+	end
+	
+	function SetPlayersToPlace(set)
+		self._placement.SetPlayersToPlace(set);
+	end
+
+	function StartLoop()
+		def curLogic = self._placement;
+		
+		curLogic.Start();
+		self._camera.Start(CenterOfGridPositions(self._placement.GetPositions()));
+		subscribe("AtmosInput_OnMouseButtonPressed", self._OnLeftMouseButtonPressed);
+		
+		while true
+			self._mousePosition = AtmosInput_GetMousePositionInGameCoordinates();
+		
+			if curLogic.typeId() != NilType
+				if not curLogic.IsDone()
+					curLogic.Work();
+				else
+					curLogic = nil;
+				end
+			end
+		
+			Atmos_Suspend();
+		end
+		
+		unsubscribe("AtmosInput_OnMouseButtonPressed", self._OnLeftMouseButtonPressed);
+		self._camera.Stop();
+		curLogic.Stop();
+	end
+	
+	function GetMousePosition() : return self._mousePosition;
+	function GetSelectedEntity() : return self._selectedEntity;
+	
+	_placement = BattlePlacement();
+	_movement = BattleMovement();
+	_attack = BattleAttack();
+	_ability = BattleAbility();
+	_camera = BattleCamera();
+	
+	_mousePosition = nil;
+	_selectedEntity = nil;
+	
+	function _Select(entity)
+		Atmos_Log("SELECTED");
+		Atmos_Log(entity.describe());
+		_selectedEntity = entity;
+	end
+	
+	function _OnLeftMouseButtonPressed()
+		def foundEntities = AtmosEntity_FindByPosition(self._mousePosition.ConvertToGridPosition(0));
+	
+		for entity in foundEntities
+			if entity.HasComponent(AtmosEntity_ComponentType.Battle);
+				self._Select(entity);
+				break;
+			end
+		end
+	end
+end
+
+export BattleManager;

@@ -1,0 +1,45 @@
+load m_Utility;
+
+object BattleSquad
+	function MoveTo(squad, entity)
+		self.Remove(entity);
+	
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+		
+		generalComponent.Store(self._storeName, squad);
+	end
+	
+	function Remove(entity)
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+	
+		generalComponent.RemoveStore(self._storeName);
+	end
+
+	function WhichSquad(entity)
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+	
+		def store = self._FindStore(generalComponent);
+		
+		if IsNil(store) : return nil;
+		
+		return store;
+	end
+	
+	function IsIn(squad, entity) : return not IsNil(self._ExtractRequiredGeneralComponent(generalComponent));
+	
+	_storeName = "BattleSquad";
+	
+	function _ExtractRequiredGeneralComponent(entity)
+		def generalComponent = entity.FindComponent(AtmosEntity_ComponentType.General);
+		
+		if IsNil(generalComponent)
+			Atmos_Log("Cannot use object with squad.", Atmos_LogType.ErrorModerate, [Atmos_NameValuePair("Entity", entity.describe())]);
+		end
+		
+		return generalComponent;
+	end
+	
+	function _FindStore(generalComponent) : return generalComponent.FindStore(self._storeName);
+end
+
+export BattleSquad;

@@ -1,0 +1,14 @@
+
+load m_SpeechOutput;
+load m_SpeechGraph;
+
+def graph = SpeechGraph();
+def message = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+def speed = 10;
+def useMultiplier = 10;
+def reset = true;
+def endingWait = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(10.0), AtmosTime_Epoch.Seconds);
+
+def output = SpeechOutput(message, speed, useMultiplier, reset, endingWait);
+graph.AddPart(output);
+graph();

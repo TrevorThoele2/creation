@@ -1,0 +1,10 @@
+
+load m_CommonMovement;
+
+def left = Animation(17, 24);
+def up = Animation(9, 16);
+def right = Animation(25, 32);
+def down = Animation(1, 8);
+
+def timeTaken = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(0.125), AtmosTime_Epoch.Seconds);
+CommonLinearMovement(timeTaken, left, up, right, down);

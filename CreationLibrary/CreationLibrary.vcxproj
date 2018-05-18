@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Debug|Win32">
+      <Configuration>Release Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Debug|x64">
+      <Configuration>Release Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{359E356A-67EE-49E2-89C4-799C6FA89C6C}</ProjectGuid>
+    <RootNamespace>LevelEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CreationLibrary</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release Debug|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)\Working\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Programming Projects\Chroma;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib\mswud;C:\Program Files %28x86%29\Falcon\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\wxWidgets\include;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\SailSerialization;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\GUI;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\Engine;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\Affecter;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\wxWidgets\include;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Programming Projects\Atmos;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Falcon\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib\mswud;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2015\Projects\Function;C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Programming Projects\Affecter;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)\Working\</OutDir>
+    <TargetName>$(ProjectName)_rdebug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PreprocessorDefinitions>NOMINMAX;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wxmsw30ud_core.lib;wxbase30ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;__WXMSW__;_WINDOWS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;wxmsw31u_core.lib;wxbase31u.lib;wxmsw31u_aui.lib;wxmsw31u_adv.lib;wxmsw31u_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:libcmt.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;__WXMSW__;_WINDOWS;CREATION_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>falcon_engine.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;wxmsw31ud_core.lib;wxbase31ud.lib;wxmsw31ud_aui.lib;wxmsw31ud_adv.lib;wxmsw31ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkStatus>false</LinkStatus>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Visual Leak Detector\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionAssetData.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AssetData.cpp" />
+    <ClCompile Include="AssetEditingMode.cpp" />
+    <ClCompile Include="AssetsRoot.cpp" />
+    <ClCompile Include="AtmosRender.cpp" />
+    <ClCompile Include="BoundsData.cpp" />
+    <ClCompile Include="BuildContext.cpp" />
+    <ClCompile Include="BuildFileSignature.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="DynamicWorldEntityBoundaryPosition.cpp" />
+    <ClCompile Include="DynamicWorldImage.cpp" />
+    <ClCompile Include="EditableNexusBase.cpp" />
+    <ClCompile Include="EntityBoundaryPosition.cpp" />
+    <ClCompile Include="EntityBoundaryPositionCurator.cpp" />
+    <ClCompile Include="FilePaths.cpp" />
+    <ClCompile Include="FontAssetData.cpp" />
+    <ClCompile Include="GhostWorldElementBase.cpp" />
+    <ClCompile Include="KeyData.cpp" />
+    <ClCompile Include="LoggingSink.cpp" />
+    <ClCompile Include="MainFrameStack.cpp" />
+    <ClCompile Include="MovementManager.cpp" />
+    <ClCompile Include="MoveTool.cpp" />
+    <ClCompile Include="NexusHistory.cpp" />
+    <ClCompile Include="DataRoot.cpp" />
+    <ClCompile Include="DynamicImageData.cpp" />
+    <ClCompile Include="EditBox.cpp" />
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="EditingMode.cpp" />
+    <ClCompile Include="EditingTool.cpp" />
+    <ClCompile Include="NexusBatchBase.cpp" />
+    <ClCompile Include="EntitiesRoot.cpp" />
+    <ClCompile Include="EntityEditingMode.cpp" />
+    <ClCompile Include="EntityBoundaryPositionData.cpp" />
+    <ClCompile Include="EntityBoundaryRenderInformation.cpp" />
+    <ClCompile Include="EntityBoundaryRenderInformationCurator.cpp" />
+    <ClCompile Include="EntityBoundaryRoot.cpp" />
+    <ClCompile Include="EntityBoundaryEditingMode.cpp" />
+    <ClCompile Include="EntityRenderInformation.cpp" />
+    <ClCompile Include="EntityRenderInformationCurator.cpp" />
+    <ClCompile Include="InputSettingsFile.cpp" />
+    <ClCompile Include="ImageCoreData.cpp" />
+    <ClCompile Include="MaterialAssetPassData.cpp" />
+    <ClCompile Include="MutationCurator.cpp" />
+    <ClCompile Include="NexusNode.cpp" />
+    <ClCompile Include="NullEditingMode.cpp" />
+    <ClCompile Include="OutputBuildFile.cpp" />
+    <ClCompile Include="AudioAssetData.cpp" />
+    <ClCompile Include="BoolData.cpp" />
+    <ClCompile Include="InputBuildFile.cpp" />
+    <ClCompile Include="PackagedData.cpp" />
+    <ClCompile Include="PaintTool.cpp" />
+    <ClCompile Include="Point3DData.cpp" />
+    <ClCompile Include="PropertiesEditor.cpp" />
+    <ClCompile Include="PropertiesTree.cpp" />
+    <ClCompile Include="DefaultImageMaterialsCurator.cpp" />
+    <ClCompile Include="PropertyName.cpp" />
+    <ClCompile Include="RenderCoreData.cpp" />
+    <ClCompile Include="RenderReliquary.cpp" />
+    <ClCompile Include="Scalers2DData.cpp" />
+    <ClCompile Include="NexusSelection.cpp" />
+    <ClCompile Include="NexusSelectionExceptions.cpp" />
+    <ClCompile Include="ScriptData.cpp" />
+    <ClCompile Include="SelectAssetDialog.cpp" />
+    <ClCompile Include="TreeCtrl.cpp" />
+    <ClCompile Include="VariantData.cpp" />
+    <ClCompile Include="SelectTool.cpp" />
+    <ClCompile Include="SequenceNexusBase.cpp" />
+    <ClCompile Include="TerrainRoot.cpp" />
+    <ClCompile Include="FilePathData.cpp" />
+    <ClCompile Include="GridPointData.cpp" />
+    <ClCompile Include="ImageAssetData.cpp" />
+    <ClCompile Include="ChildProcesses.cpp" />
+    <ClCompile Include="ColorData.cpp" />
+    <ClCompile Include="EntityPrototypeData.cpp" />
+    <ClCompile Include="MaterialAssetData.cpp" />
+    <ClCompile Include="ScriptAssetData.cpp" />
+    <ClCompile Include="ShaderAssetData.cpp" />
+    <ClCompile Include="Size2DData.cpp" />
+    <ClCompile Include="Size3DData.cpp" />
+    <ClCompile Include="StaticImageData.cpp" />
+    <ClCompile Include="StringData.cpp" />
+    <ClCompile Include="TerrainEditingMode.cpp" />
+    <ClCompile Include="EditingUI.cpp" />
+    <ClCompile Include="Field.cpp" />
+    <ClCompile Include="OutputView.cpp" />
+    <ClCompile Include="GridLines.cpp" />
+    <ClCompile Include="History.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="SettingsDialog.cpp" />
+    <ClCompile Include="OutputSettingsFile.cpp" />
+    <ClCompile Include="StringButtonProperty.cpp" />
+    <ClCompile Include="StringSelectionDialog.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="TreeElementBase.cpp" />
+    <ClCompile Include="Viewport.cpp" />
+    <ClCompile Include="ViewportStack.cpp" />
+    <ClCompile Include="WithButtonEditor.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldElementBase.cpp" />
+    <ClCompile Include="WorldException.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionAssetData.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="AssetData.h" />
+    <ClInclude Include="AssetEditingMode.h" />
+    <ClInclude Include="Assets.h" />
+    <ClInclude Include="AssetsRoot.h" />
+    <ClInclude Include="AtmosRender.h" />
+    <ClInclude Include="AutoNexus.h" />
+    <ClInclude Include="AutoProperty.h" />
+    <ClInclude Include="BoundsData.h" />
+    <ClInclude Include="BuildContext.h" />
+    <ClInclude Include="BuildFileExtension.h" />
+    <ClInclude Include="BuildFileSignature.h" />
+    <ClInclude Include="ChangeDefaultImageMaterials.h" />
+    <ClInclude Include="ChangeGridLineMaterial.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="DataIncludes.h" />
+    <ClInclude Include="DynamicWorldEntityBoundaryPosition.h" />
+    <ClInclude Include="DynamicWorldImage.h" />
+    <ClInclude Include="EditableNexusBase.h" />
+    <ClInclude Include="EditableNexusCommon.h" />
+    <ClInclude Include="EntityBoundaryPosition.h" />
+    <ClInclude Include="EntityBoundaryPositionCurator.h" />
+    <ClInclude Include="FilePaths.h" />
+    <ClInclude Include="FontAssetData.h" />
+    <ClInclude Include="GhostWorldElement.h" />
+    <ClInclude Include="GhostWorldElementBase.h" />
+    <ClInclude Include="GhostWorldElementCommon.h" />
+    <ClInclude Include="KeyData.h" />
+    <ClInclude Include="LoggingSink.h" />
+    <ClInclude Include="MainFrameStack.h" />
+    <ClInclude Include="MovementManager.h" />
+    <ClInclude Include="MoveTool.h" />
+    <ClInclude Include="NexusHistory.h" />
+    <ClInclude Include="DataRoot.h" />
+    <ClInclude Include="DefaultImageMaterials.h" />
+    <ClInclude Include="DynamicImageData.h" />
+    <ClInclude Include="PackagedData.h" />
+    <ClInclude Include="PropertyName.h" />
+    <ClInclude Include="RenderCoreData.h" />
+    <ClInclude Include="RenderReliquary.h" />
+    <ClInclude Include="ScriptData.h" />
+    <ClInclude Include="SelectAssetDialog.h" />
+    <ClInclude Include="TreeCtrl.h" />
+    <ClInclude Include="ToWxWidgets.h" />
+    <ClInclude Include="ValidatorTraits.h" />
+    <ClInclude Include="VariantData.h" />
+    <ClInclude Include="SequenceNexusBase.h" />
+    <ClInclude Include="EntityRenderInformation.h" />
+    <ClInclude Include="EntityBoundaryRenderInformation.h" />
+    <ClInclude Include="EntityBoundaryRenderInformationCurator.h" />
+    <ClInclude Include="EntityRenderInformationCurator.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="HasLabelConstructor.h" />
+    <ClInclude Include="InitializeBoundaryRenderInformation.h" />
+    <ClInclude Include="InitializeEntityRenderInformation.h" />
+    <ClInclude Include="ListData.h" />
+    <ClInclude Include="MaterialAssetPassData.h" />
+    <ClInclude Include="NexusSelectionExceptions.h" />
+    <ClInclude Include="SequenceNexusCommon.h" />
+    <ClInclude Include="Nexus.h" />
+    <ClInclude Include="NexusNode.h" />
+    <ClInclude Include="NexusCommon.h" />
+    <ClInclude Include="AutoNexusHandler.h" />
+    <ClInclude Include="CategoryProperty.h" />
+    <ClInclude Include="Editor.h" />
+    <ClInclude Include="EntityBoundaryPositionData.h" />
+    <ClInclude Include="EnumDescriptors.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="TerminalProperty.h" />
+    <ClInclude Include="EditingMode.h" />
+    <ClInclude Include="EditingTool.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="NexusBatch.h" />
+    <ClInclude Include="NexusBatchBase.h" />
+    <ClInclude Include="NexusBatchCommon.h" />
+    <ClInclude Include="EntitiesRoot.h" />
+    <ClInclude Include="EntityEditingMode.h" />
+    <ClInclude Include="EntityBoundaryRoot.h" />
+    <ClInclude Include="GridLinesInformation.h" />
+    <ClInclude Include="FloatData.h" />
+    <ClInclude Include="InputSettingsFile.h" />
+    <ClInclude Include="IntegerData.h" />
+    <ClInclude Include="ImageCoreData.h" />
+    <ClInclude Include="MutationCurator.h" />
+    <ClInclude Include="NullEditingMode.h" />
+    <ClInclude Include="EntityBoundaryEditingMode.h" />
+    <ClInclude Include="OutputBuildFile.h" />
+    <ClInclude Include="AudioAssetData.h" />
+    <ClInclude Include="BoolData.h" />
+    <ClInclude Include="InputBuildFile.h" />
+    <ClInclude Include="PaintTool.h" />
+    <ClInclude Include="Point3DData.h" />
+    <ClInclude Include="PropertiesEditor.h" />
+    <ClInclude Include="PropertiesTree.h" />
+    <ClInclude Include="DefaultImageMaterialsCurator.h" />
+    <ClInclude Include="Scalers2DData.h" />
+    <ClInclude Include="NexusSelection.h" />
+    <ClInclude Include="TerrainRoot.h" />
+    <ClInclude Include="FilePathData.h" />
+    <ClInclude Include="GridPointData.h" />
+    <ClInclude Include="ImageAssetData.h" />
+    <ClInclude Include="ChildProcesses.h" />
+    <ClInclude Include="MaterialAssetData.h" />
+    <ClInclude Include="ScriptAssetData.h" />
+    <ClInclude Include="SelectTool.h" />
+    <ClInclude Include="ShaderAssetData.h" />
+    <ClInclude Include="Size2DData.h" />
+    <ClInclude Include="Size3DData.h" />
+    <ClInclude Include="StaticImageData.h" />
+    <ClInclude Include="StringData.h" />
+    <ClInclude Include="TerrainEditingMode.h" />
+    <ClInclude Include="ColorData.h" />
+    <ClInclude Include="EntityPrototypeData.h" />
+    <ClInclude Include="EnumData.h" />
+    <ClInclude Include="EditingUI.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="FilePath.h" />
+    <ClInclude Include="OutputView.h" />
+    <ClInclude Include="ExitException.h" />
+    <ClInclude Include="GridLines.h" />
+    <ClInclude Include="History.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="StringButtonProperty.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="SettingsDialog.h" />
+    <ClInclude Include="OutputSettingsFile.h" />
+    <ClInclude Include="AutoTextControl.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="StringSelectionDialog.h" />
+    <ClInclude Include="TreeElement.h" />
+    <ClInclude Include="TreeElementBase.h" />
+    <ClInclude Include="ViewportStack.h" />
+    <ClInclude Include="WithButtonEditor.h" />
+    <ClInclude Include="wxNexusTreeItemData.h" />
+    <ClInclude Include="EditBox.h" />
+    <ClInclude Include="WorldElement.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="WorldElementBase.h" />
+    <ClInclude Include="WorldElementCommon.h" />
+    <ClInclude Include="WorldException.h" />
+    <ClInclude Include="wxTreeItemIdHash.h" />
+    <ClInclude Include="wxWidgetsHelper.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Viewport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Arca\Arca\Arca.vcxproj">
+      <Project>{56692cfb-b693-404e-9d98-a379d1370664}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Atmos\Atmos\Atmos.vcxproj">
+      <Project>{0e94289d-72e8-4a52-b32a-7b26c1a9ff0c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Chroma\Chroma\Chroma.vcxproj">
+      <Project>{11d859bd-185b-40e3-9eba-0fa17d6fd187}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Inscription\Inscription\Inscription.vcxproj">
+      <Project>{93a2633a-46a4-4a08-aa6a-2c4dd75990b5}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

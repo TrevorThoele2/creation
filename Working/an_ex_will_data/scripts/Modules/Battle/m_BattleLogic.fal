@@ -1,0 +1,42 @@
+
+class BattleLogic
+	function Start()
+		self._StartImpl();
+	end
+	
+	function Stop()
+		self._StopImpl();
+	end
+	
+	function OnLeftMouseButtonPressed()
+		self._OnLeftMouseButtonPressedImpl();
+	end
+	
+	function Work()
+		self._WorkImpl();
+	end
+	
+	function IsDone()
+		return self._IsDoneImpl();
+	end
+	
+	function _StartImpl()
+	end
+	
+	function _StopImpl()
+	end
+	
+	function _WorkImpl()
+	end
+	
+	function _IsDoneImpl()
+	end
+	
+	function _OnLeftMouseButtonPressedImpl()
+	end
+	
+	function _GetMousePosition() : return BattleManager.GetMousePosition();
+	function _GetSelectedEntity() : return BattleManager.GetSelectedEntity();
+end
+
+export BattleLogic;

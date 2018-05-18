@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Helper">
+      <UniqueIdentifier>{09fb51cd-a099-4cf5-a2cc-917774f92c6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Settings">
+      <UniqueIdentifier>{d81fbf36-a81d-40e2-843f-921ffd162537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Settings">
+      <UniqueIdentifier>{f339c16d-5d5f-493f-8f80-e9313ba6e602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Build">
+      <UniqueIdentifier>{ce940fae-1cda-4fd4-9e3a-fe7deca06ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Build">
+      <UniqueIdentifier>{1efe3811-cf7a-4c8a-a499-aba9b959ae41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Position">
+      <UniqueIdentifier>{a13c9554-7a81-4f94-a300-b8587a45fa82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Position">
+      <UniqueIdentifier>{8a18a682-0096-4ff0-869a-de388d23379f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{a3d0f3db-bf79-4deb-a046-e54c97982a3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{467ffce5-ac0f-4341-be99-eebcf139868c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exception">
+      <UniqueIdentifier>{85af8f81-4417-4bc1-a30c-607603273af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exception">
+      <UniqueIdentifier>{2b606211-ca44-4abe-88de-628223d8a362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EventOutput">
+      <UniqueIdentifier>{8f4f522f-b341-42bf-b056-1e2038b9a803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\EventOutput">
+      <UniqueIdentifier>{910db138-db43-459a-bee9-417b61e32b8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World">
+      <UniqueIdentifier>{bb7decd3-59c6-427e-8829-4e7817a59212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World">
+      <UniqueIdentifier>{13688973-2e35-40ee-852c-891f33140b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing">
+      <UniqueIdentifier>{e44db552-e217-4c48-981b-a503e796bbb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing">
+      <UniqueIdentifier>{35991a4e-4b50-44ee-b84d-d0d131ad6e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Mode">
+      <UniqueIdentifier>{b1d32b16-f816-46ca-ad02-1012bac4cf7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Mode">
+      <UniqueIdentifier>{829ab201-1dce-4139-81c6-b3ed8ce81402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Tool">
+      <UniqueIdentifier>{6c29419d-3028-4a08-a684-a6676ea922cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Tool">
+      <UniqueIdentifier>{1771fd49-c087-4af4-8832-b545945a0e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data">
+      <UniqueIdentifier>{82e599f9-a27f-4333-b182-699cbd16fb92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Asset">
+      <UniqueIdentifier>{251c988b-fcb3-4301-8c38-d4d6cb4002ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Entity">
+      <UniqueIdentifier>{96055b1e-c5a9-42bd-9a63-cc3e126eacf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Numeric">
+      <UniqueIdentifier>{5df6a76a-bf62-4d51-a969-8878bd63bf0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Render">
+      <UniqueIdentifier>{912c6a1e-c811-4db6-885b-74b0b05abc8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Root">
+      <UniqueIdentifier>{0cc92b5a-f7b3-403f-be49-e3304fb71995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure">
+      <UniqueIdentifier>{ca372c2f-67eb-4996-853a-af402ae08c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Tree">
+      <UniqueIdentifier>{c3152c4f-04ce-4239-b814-3baba7331259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Editor">
+      <UniqueIdentifier>{b446fa3a-2c20-4ed2-aca5-6636309674f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Editor\Property">
+      <UniqueIdentifier>{39a5953f-dc5d-46db-a2f3-c16c73aa88ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Editor\Batch">
+      <UniqueIdentifier>{58aafc8e-edb1-42a2-9393-8a2b70d8e639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\World">
+      <UniqueIdentifier>{7809c9e7-851a-4aef-b707-b5a6bb4db4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data">
+      <UniqueIdentifier>{689077a3-5f9d-4a35-aaef-d1727662e7cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Asset">
+      <UniqueIdentifier>{e2778705-ea38-442a-aba4-6a13691b8491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Entity">
+      <UniqueIdentifier>{fc230496-d96a-4abf-8364-234ed0484628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Numeric">
+      <UniqueIdentifier>{bffd0546-5d74-4caf-921f-fba91812260a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Render">
+      <UniqueIdentifier>{cf7ccc89-ee80-464c-91e9-c710763f74da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure">
+      <UniqueIdentifier>{b4f12150-6e7c-4839-ae91-59116202cdef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Tree">
+      <UniqueIdentifier>{c45b3232-1ab7-4608-85ce-6ca8f335ad82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Editor">
+      <UniqueIdentifier>{5c48ea08-16be-4046-8470-71d968743f3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Editor\Property">
+      <UniqueIdentifier>{61eccc86-3660-4180-ac71-24ef6723226d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Root">
+      <UniqueIdentifier>{f24f3ed7-1c19-4c15-9627-8ee37c02c0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Spatial">
+      <UniqueIdentifier>{0a874ae1-2e49-4040-8236-cad8e06a9870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Spatial">
+      <UniqueIdentifier>{9c6fa320-a39c-46a4-b6b4-c393b18713ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Nexus">
+      <UniqueIdentifier>{cf626786-4d0d-4c4a-b4e3-cd499f862437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Nexus">
+      <UniqueIdentifier>{6f7745e7-b0f6-430e-b422-faeabb6a4dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\wxWidgets">
+      <UniqueIdentifier>{86c04b55-062c-4efb-bba4-55677e942784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\wxWidgets">
+      <UniqueIdentifier>{63516a86-1c32-4da0-b39f-6963fdbb967d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Nexus\Selection">
+      <UniqueIdentifier>{073adfa8-ff7e-4e80-93ec-cd0f22fee21f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Nexus\Selection">
+      <UniqueIdentifier>{b0d27f13-eb16-4419-b75b-e83bffb01ce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Nexus\Sequence">
+      <UniqueIdentifier>{b7e595fc-441d-4e37-88d1-df7109949b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Nexus\Editable">
+      <UniqueIdentifier>{b1d79439-4392-4882-b582-acaa015435f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\Nexus\Auto">
+      <UniqueIdentifier>{45cee95b-a658-4b60-ac44-99903f4e664b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Editor\Batch">
+      <UniqueIdentifier>{dff0b342-268c-4032-b0ff-be2bf82b1a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Nexus\Sequence">
+      <UniqueIdentifier>{17919e33-733e-4153-bc9d-14302d503fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\Nexus\Editable">
+      <UniqueIdentifier>{36b6aa6c-5c55-4252-bc86-bdb7f7d96751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Infrastructure\World\Ghost">
+      <UniqueIdentifier>{8db9ae86-d914-4ad3-9e16-67e7741e2954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\World">
+      <UniqueIdentifier>{441a3897-cfdc-4d6a-aaeb-84660a80676b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Infrastructure\World\Ghost">
+      <UniqueIdentifier>{573ddb6d-de67-4a2b-816d-52f43755342d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Render">
+      <UniqueIdentifier>{8bc3d544-855f-4229-ae4a-055ca0d76c14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Render">
+      <UniqueIdentifier>{355163f3-86ee-4484-bd5b-437f8110ad7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Mode\Implementation">
+      <UniqueIdentifier>{74021808-129d-408f-9d06-3dbff9e28974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Mode\Implementation">
+      <UniqueIdentifier>{37505352-a4ec-4af5-8746-b28aa6d010fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Render\DefaultImageMaterials">
+      <UniqueIdentifier>{32b2adc9-b6ad-4667-8521-8e575c3a27fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Render\EntityBoundary">
+      <UniqueIdentifier>{e56c4b54-0c19-4dae-bb92-ea7ff624c1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Render\Entity">
+      <UniqueIdentifier>{6a28f286-1078-4cd4-be3b-f324bbac4a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Render\GridLines">
+      <UniqueIdentifier>{9c96a2e8-a228-44f7-a287-43249862bbb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Render\DefaultImageMaterials">
+      <UniqueIdentifier>{8e090b49-908b-4b02-822b-24dadb9a86f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Render\EntityBoundary">
+      <UniqueIdentifier>{ad956e68-e675-4eff-9969-13f459ca5bf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Render\Entity">
+      <UniqueIdentifier>{22bae3f9-60e6-4301-ae45-93b8dddcd379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Render\GridLines">
+      <UniqueIdentifier>{0b3692b9-48eb-4fd7-b93c-f260a4e955f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Script">
+      <UniqueIdentifier>{ed4d7db1-a483-40ab-9bb9-0101926a128c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Script">
+      <UniqueIdentifier>{0b997a3c-ac2e-4071-ad3f-f951c47c80b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Atmos">
+      <UniqueIdentifier>{b6cf22d5-b686-49ef-936a-4537dd9a165e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atmos">
+      <UniqueIdentifier>{7c56c1e9-e120-444e-9bf2-e98222c5aaa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editing\Data\Input">
+      <UniqueIdentifier>{2db5c23f-8b65-4b25-9a3d-13116e46834f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editing\Data\Input">
+      <UniqueIdentifier>{9fb6e67b-32bb-4f17-99aa-ab23c61bd437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render">
+      <UniqueIdentifier>{59d938dd-7ec2-4666-afc2-67afaf096f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{151e241b-951c-40d7-aa2e-3a41b4ab5253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stack">
+      <UniqueIdentifier>{9a4e9d29-5460-4664-ba39-ee101ad5fee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Stack">
+      <UniqueIdentifier>{cb7f7061-78dc-455f-aeb0-7ef4318f6adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ChildProcesses">
+      <UniqueIdentifier>{c3bf1ac3-e54a-4a4d-8508-f9497910d575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ChildProcesses">
+      <UniqueIdentifier>{9d22bdfe-4f24-472f-bf2d-f4aad16b7f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\wxWidgets\Controls">
+      <UniqueIdentifier>{c3079d45-99d3-4a8e-b75f-f967e5583f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\wxWidgets\Controls">
+      <UniqueIdentifier>{c7f4afe3-037a-475c-9ddb-8902f58694b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Build\File">
+      <UniqueIdentifier>{39f6fd39-ec49-4009-a90b-8befb08d0b0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Build\File">
+      <UniqueIdentifier>{a45058de-d92e-496c-bf25-5028e738473d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SettingsDialog.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="StringSelectionDialog.cpp">
+      <Filter>Source Files\wxWidgets\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputBuildFile.cpp">
+      <Filter>Source Files\Build\File</Filter>
+    </ClCompile>
+    <ClCompile Include="InputBuildFile.cpp">
+      <Filter>Source Files\Build\File</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSettingsFile.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputSettingsFile.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="StringData.cpp">
+      <Filter>Source Files\Editing\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="BoolData.cpp">
+      <Filter>Source Files\Editing\Data\Numeric</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorData.cpp">
+      <Filter>Source Files\Editing\Data\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundsData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="Size3DData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="Size2DData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Source Files\Position</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files\Position</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildProcesses.cpp">
+      <Filter>Source Files\ChildProcesses</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputView.cpp">
+      <Filter>Source Files\EventOutput</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldException.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildContext.cpp">
+      <Filter>Source Files\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="MutationCurator.cpp">
+      <Filter>Source Files\Editing\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="EditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainEditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="EditingTool.cpp">
+      <Filter>Source Files\Editing\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetEditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityEditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRoot.cpp">
+      <Filter>Source Files\Editing\Data\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetsRoot.cpp">
+      <Filter>Source Files\Editing\Data\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitiesRoot.cpp">
+      <Filter>Source Files\Editing\Data\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainRoot.cpp">
+      <Filter>Source Files\Editing\Data\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="FilePathData.cpp">
+      <Filter>Source Files\Editing\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="EditingUI.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesTree.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesEditor.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldElementBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\World</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicImageData.cpp">
+      <Filter>Source Files\Editing\Data\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCoreData.cpp">
+      <Filter>Source Files\Editing\Data\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticImageData.cpp">
+      <Filter>Source Files\Editing\Data\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Scalers2DData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="EditBox.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintTool.cpp">
+      <Filter>Source Files\Editing\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectTool.cpp">
+      <Filter>Source Files\Editing\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="GridLines.cpp">
+      <Filter>Source Files\Editing\Render\GridLines</Filter>
+    </ClCompile>
+    <ClCompile Include="Point3DData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="GridPointData.cpp">
+      <Filter>Source Files\Editing\Data\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityRenderInformation.cpp">
+      <Filter>Source Files\Editing\Render\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityRenderInformationCurator.cpp">
+      <Filter>Source Files\Editing\Render\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="NexusNode.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeElementBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialAssetPassData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="NexusSelection.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus\Selection</Filter>
+    </ClCompile>
+    <ClCompile Include="NexusSelectionExceptions.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus\Selection</Filter>
+    </ClCompile>
+    <ClCompile Include="NexusBatchBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Editor\Batch</Filter>
+    </ClCompile>
+    <ClCompile Include="NullEditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="SequenceNexusBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus\Sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="EditableNexusBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus\Editable</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultImageMaterialsCurator.cpp">
+      <Filter>Source Files\Editing\Render\DefaultImageMaterials</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveTool.cpp">
+      <Filter>Source Files\Editing\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="GhostWorldElementBase.cpp">
+      <Filter>Source Files\Editing\Infrastructure\World\Ghost</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicWorldImage.cpp">
+      <Filter>Source Files\Editing\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementManager.cpp">
+      <Filter>Source Files\Editing\Mode\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryPosition.cpp">
+      <Filter>Source Files\Editing\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryEditingMode.cpp">
+      <Filter>Source Files\Editing\Mode</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryRenderInformation.cpp">
+      <Filter>Source Files\Editing\Render\EntityBoundary</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryRenderInformationCurator.cpp">
+      <Filter>Source Files\Editing\Render\EntityBoundary</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryPositionData.cpp">
+      <Filter>Source Files\Editing\Data\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryRoot.cpp">
+      <Filter>Source Files\Editing\Data\Root</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicWorldEntityBoundaryPosition.cpp">
+      <Filter>Source Files\Editing\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBoundaryPositionCurator.cpp">
+      <Filter>Source Files\Editing\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="PackagedData.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityPrototypeData.cpp">
+      <Filter>Source Files\Editing\Data\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmosRender.cpp">
+      <Filter>Source Files\Atmos</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptData.cpp">
+      <Filter>Source Files\Editing\Data\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="VariantData.cpp">
+      <Filter>Source Files\Editing\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyData.cpp">
+      <Filter>Source Files\Editing\Data\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="LoggingSink.cpp">
+      <Filter>Source Files\EventOutput</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderReliquary.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="History.cpp">
+      <Filter>Source Files\Editing</Filter>
+    </ClCompile>
+    <ClCompile Include="NexusHistory.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Nexus</Filter>
+    </ClCompile>
+    <ClCompile Include="StringButtonProperty.cpp">
+      <Filter>Source Files\wxWidgets\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrameStack.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewportStack.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeCtrl.cpp">
+      <Filter>Source Files\wxWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="FontAssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderCoreData.cpp">
+      <Filter>Source Files\Editing\Data\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="FilePaths.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetData.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildFileSignature.cpp">
+      <Filter>Source Files\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyName.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="WithButtonEditor.cpp">
+      <Filter>Source Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectAssetDialog.cpp">
+      <Filter>Source Files\Editing\Data\Asset</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wxWidgetsHelper.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoTextControl.h">
+      <Filter>Header Files\wxWidgets\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsDialog.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="StringSelectionDialog.h">
+      <Filter>Header Files\wxWidgets\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="InputBuildFile.h">
+      <Filter>Header Files\Build\File</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputBuildFile.h">
+      <Filter>Header Files\Build\File</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSettingsFile.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputSettingsFile.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumData.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StringData.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="BoolData.h">
+      <Filter>Header Files\Editing\Data\Numeric</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerData.h">
+      <Filter>Header Files\Editing\Data\Numeric</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorData.h">
+      <Filter>Header Files\Editing\Data\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundsData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatData.h">
+      <Filter>Header Files\Editing\Data\Numeric</Filter>
+    </ClInclude>
+    <ClInclude Include="Size3DData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildContext.h">
+      <Filter>Header Files\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildFileExtension.h">
+      <Filter>Header Files\Build\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Size2DData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Header Files\Position</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files\Position</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Header Files\Position</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildProcesses.h">
+      <Filter>Header Files\ChildProcesses</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePath.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitException.h">
+      <Filter>Header Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputView.h">
+      <Filter>Header Files\EventOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldException.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainEditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetEditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="EditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityEditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="NullEditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="EditingTool.h">
+      <Filter>Header Files\Editing\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintTool.h">
+      <Filter>Header Files\Editing\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectTool.h">
+      <Filter>Header Files\Editing\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldElement.h">
+      <Filter>Header Files\Editing\Infrastructure\World</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRoot.h">
+      <Filter>Header Files\Editing\Data\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetsRoot.h">
+      <Filter>Header Files\Editing\Data\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitiesRoot.h">
+      <Filter>Header Files\Editing\Data\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainRoot.h">
+      <Filter>Header Files\Editing\Data\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePathData.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EditingUI.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesEditor.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesTree.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoProperty.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldElementBase.h">
+      <Filter>Header Files\Editing\Infrastructure\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldElementCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\World</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticImageData.h">
+      <Filter>Header Files\Editing\Data\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCoreData.h">
+      <Filter>Header Files\Editing\Data\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicImageData.h">
+      <Filter>Header Files\Editing\Data\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Scalers2DData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="EditBox.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumDescriptors.h">
+      <Filter>Header Files\Editing\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="GridLinesInformation.h">
+      <Filter>Header Files\Editing\Render\GridLines</Filter>
+    </ClInclude>
+    <ClInclude Include="GridLines.h">
+      <Filter>Header Files\Editing\Render\GridLines</Filter>
+    </ClInclude>
+    <ClInclude Include="Point3DData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="GridPointData.h">
+      <Filter>Header Files\Editing\Data\Spatial</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityRenderInformationCurator.h">
+      <Filter>Header Files\Editing\Render\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityRenderInformation.h">
+      <Filter>Header Files\Editing\Render\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="InitializeEntityRenderInformation.h">
+      <Filter>Header Files\Editing\Render\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MutationCurator.h">
+      <Filter>Header Files\Editing\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Nexus.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="ListData.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusNode.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="wxNexusTreeItemData.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeElementBase.h">
+      <Filter>Header Files\Editing\Infrastructure\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeElement.h">
+      <Filter>Header Files\Editing\Infrastructure\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialAssetPassData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="wxTreeItemIdHash.h">
+      <Filter>Header Files\wxWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="HasLabelConstructor.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Header Files\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusSelection.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Selection</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusSelectionExceptions.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Selection</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceNexusBase.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceNexusCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Sequence</Filter>
+    </ClInclude>
+    <ClInclude Include="EditableNexusBase.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Editable</Filter>
+    </ClInclude>
+    <ClInclude Include="EditableNexusCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Editable</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoNexus.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Auto</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoNexusHandler.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus\Auto</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoryProperty.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="Property.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="TerminalProperty.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="DataIncludes.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusBatchBase.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Batch</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusBatchCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Batch</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusBatch.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Batch</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeDefaultImageMaterials.h">
+      <Filter>Header Files\Editing\Render\DefaultImageMaterials</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultImageMaterialsCurator.h">
+      <Filter>Header Files\Editing\Render\DefaultImageMaterials</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultImageMaterials.h">
+      <Filter>Header Files\Editing\Render\DefaultImageMaterials</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeGridLineMaterial.h">
+      <Filter>Header Files\Editing\Render\GridLines</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveTool.h">
+      <Filter>Header Files\Editing\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostWorldElement.h">
+      <Filter>Header Files\Editing\Infrastructure\World\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostWorldElementBase.h">
+      <Filter>Header Files\Editing\Infrastructure\World\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostWorldElementCommon.h">
+      <Filter>Header Files\Editing\Infrastructure\World\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicWorldImage.h">
+      <Filter>Header Files\Editing\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementManager.h">
+      <Filter>Header Files\Editing\Mode\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryPosition.h">
+      <Filter>Header Files\Editing\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryRoot.h">
+      <Filter>Header Files\Editing\Data\Root</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryEditingMode.h">
+      <Filter>Header Files\Editing\Mode</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryRenderInformation.h">
+      <Filter>Header Files\Editing\Render\EntityBoundary</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryRenderInformationCurator.h">
+      <Filter>Header Files\Editing\Render\EntityBoundary</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryPositionData.h">
+      <Filter>Header Files\Editing\Data\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="InitializeBoundaryRenderInformation.h">
+      <Filter>Header Files\Editing\Render\EntityBoundary</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicWorldEntityBoundaryPosition.h">
+      <Filter>Header Files\Editing\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBoundaryPositionCurator.h">
+      <Filter>Header Files\Editing\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="PackagedData.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityPrototypeData.h">
+      <Filter>Header Files\Editing\Data\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmosRender.h">
+      <Filter>Header Files\Atmos</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptData.h">
+      <Filter>Header Files\Editing\Data\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="VariantData.h">
+      <Filter>Header Files\Editing\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyData.h">
+      <Filter>Header Files\Editing\Data\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggingSink.h">
+      <Filter>Header Files\EventOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderReliquary.h">
+      <Filter>Header Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="History.h">
+      <Filter>Header Files\Editing</Filter>
+    </ClInclude>
+    <ClInclude Include="NexusHistory.h">
+      <Filter>Header Files\Editing\Infrastructure\Nexus</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="ValidatorTraits.h">
+      <Filter>Header Files\wxWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="StringButtonProperty.h">
+      <Filter>Header Files\wxWidgets\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrameStack.h">
+      <Filter>Header Files\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewportStack.h">
+      <Filter>Header Files\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="ToWxWidgets.h">
+      <Filter>Header Files\wxWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeCtrl.h">
+      <Filter>Header Files\wxWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="FontAssetData.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderCoreData.h">
+      <Filter>Header Files\Editing\Data\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePaths.h">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildFileSignature.h">
+      <Filter>Header Files\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyName.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="WithButtonEditor.h">
+      <Filter>Header Files\Editing\Infrastructure\Editor\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectAssetDialog.h">
+      <Filter>Header Files\Editing\Data\Asset</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+
+load m_AIBase;
+
+// Focused: entity representing the entity that do the attack
+// Target: entity that the focused wants to attack
+function BattleAI_Attack(focused, target)
+	def focusedPosition = focused.GetPosition();
+	def targetPosition = target.GetPosition();
+	++targetPosition.col;
+	
+	// Follow a path to the target
+	while focusedPosition.col != targetPosition.col or focusedPosition.row != targetPosition.row
+		AI_FollowPath(Atmos_FindPath(focusedPosition, targetPosition), focused);
+		
+		if atmosBattle_IsTurnEnded(focused) : atmos_Suspend();
+		
+		def focusedPosition = focused.GetPosition();
+		def targetPosition = target.GetPosition();
+		++targetPosition.col;
+	end
+	
+	atmosBattle_Attack(focused, target);
+	atmosBattle_EndTurn(focused);
+	Atmos_Suspend();
+end
+
+export BattleAI_Attack;
