@@ -71,8 +71,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\;..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\testframework;..\..\externaldependencies\catch2;..\..\externaldependencies\function2\include;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\sdl2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\externaldependencies\freeimage\Dist\x32;..\..\externaldependencies\wxwidgets\lib\vc_lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\;..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\testframework;..\..\externaldependencies\catch2;..\..\externaldependencies\function2\include;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\externaldependencies\freeimage\Dist\x32;..\..\externaldependencies\wxwidgets\lib\vc_lib;..\..\externaldependencies\v8\v8\out.gn\ia32.debug\obj;..\..\externaldependencies\boost\stage\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)WorkingTests\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -98,7 +99,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-      <AdditionalDependencies>freeimagelibd.lib;wxmsw31ud_core.lib;wxbase31ud.lib;wxmsw31ud_aui.lib;wxmsw31ud_adv.lib;wxmsw31ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>v8_monolith.lib;dbghelp.lib;Winmm.lib;freeimagelibd.lib;wxmsw31ud_core.lib;wxbase31ud.lib;wxmsw31ud_aui.lib;wxmsw31ud_adv.lib;wxmsw31ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference />
   </ItemDefinitionGroup>

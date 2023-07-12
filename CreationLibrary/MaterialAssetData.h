@@ -3,11 +3,10 @@
 #include "AssetData.h"
 #include <Atmos/MaterialAsset.h>
 
-#include "MaterialAssetPassData.h"
 #include "IntegerData.h"
 #include "StringData.h"
-#include "EnumData.h"
 #include "ListData.h"
+#include "VariantData.h"
 
 #include <Atmos/FindAssetByName.h>
 
@@ -19,11 +18,12 @@ namespace Creation::Editing
         {
         public:
             String name;
-
-            std::list<MaterialAssetPass> passes = {{}};
+            String asset;
+            String executeName;
+            std::list<Variant> parameters = {};
         public:
             MaterialAsset() = default;
-            MaterialAsset(const String& name, const std::list<MaterialAssetPass>& passes);
+            MaterialAsset(const String& name, const String& asset, const String& executeName, const std::list<Variant>& parameters);
             MaterialAsset(const MaterialAsset& arg) = default;
             MaterialAsset& operator=(const MaterialAsset & arg) = default;
 
@@ -40,6 +40,8 @@ namespace Creation::Editing
         using BaseT = NexusBatchCommon<Data::MaterialAsset>;
     public:
         Property<String> name;
+        AssetSelectorProperty asset;
+        Property<String> executeName;
     public:
         NexusBatch(wxPropertyGrid& grid, const NexusHistory& nexusHistory, UI& ui);
         NexusBatch(NexusBatch&& arg) noexcept;
@@ -80,7 +82,8 @@ namespace Creation::Editing
     public:
         Nexus<String> name;
 
-        Nexus<std::list<Data::MaterialAssetPass>> passes;
+        Nexus<Atmos::Name> executeName;
+        Nexus<std::list<Data::Variant>> parameters;
     public:
         Nexus(
             DataT& data,
@@ -113,7 +116,9 @@ namespace Inscription
         void Scriven(ObjectT& object, Format& format)
         {
             format("name", object.name);
-            format("passes", object.passes);
+            format("asset", object.asset);
+            format("executeName", object.executeName);
+            format("parameters", object.parameters);
         }
     };
 

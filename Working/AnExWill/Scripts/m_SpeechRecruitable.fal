@@ -1,0 +1,83 @@
+
+load m_SpeechGraph
+load m_SpeechInput
+load m_SpeechBranch
+load m_SpeechSwitch
+load m_SpeechRandomSwitch
+
+// Prototypes should be a list of outputs or a single output
+// If part is nil, then this WILL NOT add the part to anything, and will return the part that this makes
+// Otherwise it WILL add the new part to the given part and return the given part
+function CreateFromPrototypes(part, prototypes)
+	// Handle nil type
+	if prototypes.typeId() == NilType: return part
+	
+	// Handle with part
+	if part.typeId() != NilType
+		// Handle non-list
+		if prototypes.className() != List.className()
+			part.AddPart(prototypes)
+			return part
+		end
+		
+		// "Unpack" the list
+		if prototypes.len() == 1
+			part.AddPart(prototypes.first);
+		elif prototypes.len() > 1
+			part.AddPart(SpeechRandomSwitch(prototypes));
+		end
+		
+		return part
+	end
+	
+	// Handle without part
+	// Handle non-list
+	if prototypes.className() != List.className() : return prototypes
+	
+	// "Unpack" the list
+	if prototypes.len() == 1
+		return prototypes.first
+	elif prototypes.len() > 1
+		return SpeechRandomSwitch(prototypes)
+	end
+	
+	return prototypes
+end
+
+function RecruitableDeterminer()
+	return atmos_IsEntityInParty(atmos_GetEntityTalking())
+end
+
+function Recruit()
+	atmos_AddEntityToParty(atmos_GetEntityTalking())
+end
+
+// Greetings, alreadyRecruited, asking, onYes, onNo: list of SpeechOutput
+// Yes, no: string
+function SimpleRecruitableSpeech(greetings, alreadyRecruited, asking, yes, no, onYes, onNo)
+	graph = SpeechGraph()
+	CreateFromPrototypes(graph, greetings)
+	recruitableCheck = SpeechSwitch(RecruitableDeterminer)
+	graph.AddPart(recruitableCheck)
+	
+	// Create the not recruited branch
+	notRecruitedBranch = recruitableCheck.AddPart(false, SpeechBranch())
+	CreateFromPrototypes(notRecruitedBranch, asking)
+	// Create input
+	input = notRecruitedBranch.AddPart(SpeechInput())
+	// Yes
+	yesOption = input.AddPart(Pair(yes, SpeechBranch()))
+	yesOption.AddPart(Recruit)
+	CreateFromPrototypes(yesOption, onYes)
+	// No
+	noOption = input.AddPart(Pair(no, SpeechBranch()))
+	CreateFromPrototypes(noOption, onNo)
+	
+	// Create the recruited branch
+	recruitedBranch = recruitableCheck.AddPart(true, SpeechBranch())
+	CreateFromPrototypes(recruitedBranch, alreadyRecruited)
+	
+	graph()
+end
+
+export SimpleRecruitableSpeech

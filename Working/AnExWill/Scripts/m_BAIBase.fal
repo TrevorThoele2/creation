@@ -1,0 +1,75 @@
+
+function BattleAI_FollowPath(path, entity)
+	startingPosition = atmosBattle_GetStartingPosition(entity)
+	for pathNode in path
+		// Suspend until we can move the entity at a basic level
+		while not atmos_CanMoveEntity(entity): atmos_Suspend()
+	
+		if atmosBattle_IsTurnEnded(entity): return
+	
+		entityPosition = atmos_GetEntityPosition(entity)
+		moveDirection = atmos_Direction.Up
+		
+		// Check if we can move the entity into the next path position
+		if not atmos_CanMoveEntity(entity, pathNode)
+			// If we can't, we're going to need to request a new path
+			path = atmos_FindPath(atmos_GetEntityPosition(entity), pathNode)
+			pathNode = path.front()
+		else
+			// Check if we're moving outside of the movement range
+			// If so, then end turn
+			if entityPosition.FindDistance(startingPosition) > atmosBattle_GetMovementRange(entity)
+				atmosBattle_EndTurn(entity)
+				return
+			end
+		
+			// We can move the entity into the next path node
+			// Determine the direction to move the entity
+			if pathNode.col == entityPosition.col
+				if pathNode.row < entityPosition.row
+					moveDirection = atmos_Direction.Up
+				else
+					moveDirection = atmos_Direction.Down
+				end
+			else
+				if pathNode.col < entityPosition.col
+					moveDirection = atmos_Direction.Left
+				else
+					moveDirection = atmos_Direction.Right
+				end
+			end
+			
+			// Direction has been determined
+			atmos_MoveEntityDirection(entity, moveDirection)
+			atmos_Suspend()
+		end
+	end
+	
+	atmosBattle_EndTurn(entity)
+end
+
+// Focused: entity representing the entity that do the attack
+// Target: entity that the focused wants to attack
+function BattleAI_Attack(focused, target)
+	focusedPosition = atmos_GetEntityPosition(focused)
+	targetPosition = atmos_GetEntityPosition(target)
+	++targetPosition.col
+	
+	// Follow a path to the target
+	while focusedPosition.col != targetPosition.col or focusedPosition.row != targetPosition.row
+		BattleAI_FollowPath(atmos_FindPath(focusedPosition, targetPosition), focused)
+		
+		if atmosBattle_IsTurnEnded(focused): atmos_Suspend()
+		
+		focusedPosition = atmos_GetEntityPosition(focused)
+		targetPosition = atmos_GetEntityPosition(target)
+		++targetPosition.col
+	end
+	
+	atmosBattle_Attack(focused, target)
+	atmosBattle_EndTurn(focused)
+	atmos_Suspend()
+end
+
+export BattleAI_FollowPath
+export BattleAI_Attack

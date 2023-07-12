@@ -33,10 +33,11 @@ namespace Creation::Editing
             String value;
         public:
             Variant() = default;
+            Variant(VariantType type, const String& value);
             Variant(const Variant& arg) = default;
             Variant& operator=(const Variant& arg) = default;
 
-            Atmos::Variant Build(Build::Context& context) const;
+            Atmos::Variant Build() const;
         private:
             INSCRIPTION_ACCESS;
         };

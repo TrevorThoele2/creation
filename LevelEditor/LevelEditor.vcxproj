@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Debug|Win32">
+      <Configuration>Release Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Debug|x64">
+      <Configuration>Release Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{359E356A-67EE-49E2-89C4-799C6FA89C6C}</ProjectGuid>
+    <RootNamespace>LevelEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release Debug|x64'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Falcon\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2015\Projects\Function;C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Programming Projects\Affecter;C:\Users\Trevor\Documents\Programming Projects\AGUI;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib\mswud;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Falcon\lib;C:\Users\Trevor\Documents\Programming Projects\Ogg\Built\Debug Library;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Working\</OutDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Falcon\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2015\Projects\Function;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Programming Projects\AGUI;C:\Users\Trevor\Documents\Programming Projects\Affecter;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib\mswu;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Falcon\lib;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Users\Trevor\Documents\Programming Projects\Ogg\Built\Release Library;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Working\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\Programming Projects\wxWidgets\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets\lib\vc_lib\mswud;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Visual Studio 2015\Projects\Function;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Programming Projects\Affecter;C:\Users\Trevor\Documents\Programming Projects\AGUI;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Trevor\Documents\Programming Projects\wxWidgets\lib\vc_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\wxWidgets\include;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\SailSerialization;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\GUI;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\Engine;C:\Users\Trevor\Documents\Visual Studio 2013\Projects\Affecter;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|x64'">
+    <IncludePath>C:\Users\Trevor\Documents\wxWidgets\include;C:\Users\Trevor\Documents\Ogg\Built\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Programming Projects\Atmos;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Falcon\include;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib\mswud;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Users\Trevor\Documents\Visual Studio 2015\Projects\Function;C:\Users\Trevor\Documents\Programming Projects\Atmos;C:\Users\Trevor\Documents\Programming Projects\Inscription;C:\Users\Trevor\Documents\Programming Projects\Affecter;C:\Users\Trevor\Documents\Programming Projects\AGUI;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Falcon\lib;C:\Users\Trevor\Documents\Programming Projects\Ogg\Built\Release Debug Library;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Users\Trevor\Documents\Programming Projects\wxWidgets2\lib\vc_lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Working\</OutDir>
+    <TargetName>$(ProjectName)_rdebug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;__WXMSW__;_WINDOWS;CREATION_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ShowIncludes>false</ShowIncludes>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>falcon_engine.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;wxmsw31ud_core.lib;wxbase31ud.lib;wxmsw31ud_aui.lib;wxmsw31ud_adv.lib;wxmsw31ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wxmsw30ud_core.lib;wxbase30ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;__WXMSW__;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>falcon_engine.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;wxmsw31u_core.lib;wxbase31u.lib;wxmsw31u_aui.lib;wxmsw31u_adv.lib;wxmsw31u_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:libcmt.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Debug|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;__WXMSW__;_WINDOWS;CREATION_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>falcon_engine.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;wxmsw31ud_core.lib;wxbase31ud.lib;wxmsw31ud_aui.lib;wxmsw31ud_adv.lib;wxmsw31ud_propgrid.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;shlwapi.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;version.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkStatus>false</LinkStatus>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Visual Leak Detector\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionData.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BuildPackageAction.cpp" />
+    <ClCompile Include="BuildPackageAVEffect.cpp" />
+    <ClCompile Include="BuildPackageBattlePattern.cpp" />
+    <ClCompile Include="BuildPackageCharacterClassGroup.cpp" />
+    <ClCompile Include="BuildPackageCombatChain.cpp" />
+    <ClCompile Include="BuildPackageGeneral.cpp" />
+    <ClCompile Include="BuildPackageAsset.cpp" />
+    <ClCompile Include="BuildPackageEntities.cpp" />
+    <ClCompile Include="BuildPackageField.cpp" />
+    <ClCompile Include="BuildPackageGameData.cpp" />
+    <ClCompile Include="BuildPackageModulators.cpp" />
+    <ClCompile Include="BuildPackageNameValuePair.cpp" />
+    <ClCompile Include="BuildPackageRegistries.cpp" />
+    <ClCompile Include="BuildPackageTile.cpp" />
+    <ClCompile Include="BuildPackageVariant.cpp" />
+    <ClCompile Include="BuildPackageWorldStart.cpp" />
+    <ClCompile Include="BuildScribe.cpp" />
+    <ClCompile Include="CCPOperation.cpp" />
+    <ClCompile Include="ChildProcesses.cpp" />
+    <ClCompile Include="DataBreakdownAssetReference.cpp" />
+    <ClCompile Include="DataBreakdownAssets.cpp" />
+    <ClCompile Include="DataBreakdownAVEffect.cpp" />
+    <ClCompile Include="DataBreakdownBase.cpp" />
+    <ClCompile Include="DataBreakdownBattlePattern.cpp" />
+    <ClCompile Include="DataBreakdownColor.cpp" />
+    <ClCompile Include="DataBreakdownCombatChain.cpp" />
+    <ClCompile Include="DataBreakdownCommon.cpp" />
+    <ClCompile Include="DataBreakdownCommonKey.cpp" />
+    <ClCompile Include="DataBreakdownElement.cpp" />
+    <ClCompile Include="DataBreakdownEntities.cpp" />
+    <ClCompile Include="DataBreakdownField.cpp" />
+    <ClCompile Include="DataBreakdownGameData.cpp" />
+    <ClCompile Include="DataBreakdownGeneral.cpp" />
+    <ClCompile Include="DataBreakdownModulators.cpp" />
+    <ClCompile Include="DataBreakdownNameValuePair.cpp" />
+    <ClCompile Include="DataBreakdownParticleFountain.cpp" />
+    <ClCompile Include="DataBreakdownRegistries.cpp" />
+    <ClCompile Include="DataBreakdownRegistryReference.cpp" />
+    <ClCompile Include="DataBreakdownScriptInstance.cpp" />
+    <ClCompile Include="DataBreakdownSenses.cpp" />
+    <ClCompile Include="DataBreakdownTiles.cpp" />
+    <ClCompile Include="DataBreakdownCombatTransaction.cpp" />
+    <ClCompile Include="DataBreakdownVariant.cpp" />
+    <ClCompile Include="DataBreakdownWXItemData.cpp" />
+    <ClCompile Include="DataView.cpp" />
+    <ClCompile Include="DataViewSelection.cpp" />
+    <ClCompile Include="DataViewState.cpp" />
+    <ClCompile Include="DataViewStateEntities.cpp" />
+    <ClCompile Include="DataViewStateAssets.cpp" />
+    <ClCompile Include="DataViewStateGameData.cpp" />
+    <ClCompile Include="DataViewStateRegistries.cpp" />
+    <ClCompile Include="DataViewStateTiles.cpp" />
+    <ClCompile Include="DirectionData.cpp" />
+    <ClCompile Include="EntityCreator.cpp" />
+    <ClCompile Include="EntityData.cpp" />
+    <ClCompile Include="EntityViewManager.cpp" />
+    <ClCompile Include="EquipSlotData.cpp" />
+    <ClCompile Include="ModulatorData.cpp" />
+    <ClCompile Include="OutputView.cpp" />
+    <ClCompile Include="FixedPointValidator.cpp" />
+    <ClCompile Include="GraphicsHandler.cpp" />
+    <ClCompile Include="GridLines.cpp" />
+    <ClCompile Include="BattlePatternEditor.cpp" />
+    <ClCompile Include="BoxOperation.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandStack.cpp" />
+    <ClCompile Include="CurrentWorld.cpp" />
+    <ClCompile Include="GridPositionDialog.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageAsset.cpp" />
+    <ClCompile Include="ImageRegistry.cpp" />
+    <ClCompile Include="InternalShaders.cpp" />
+    <ClCompile Include="ItemData.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="PreviewOperation.cpp" />
+    <ClCompile Include="QuestData.cpp" />
+    <ClCompile Include="Selection.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="SettingsDialog.cpp" />
+    <ClCompile Include="SettingsScribe.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StringButtonProperty.cpp" />
+    <ClCompile Include="StringSelectionDialog.cpp" />
+    <ClCompile Include="TileViewManager.cpp" />
+    <ClCompile Include="UnifiedAccess.cpp" />
+    <ClCompile Include="VariantData.cpp" />
+    <ClCompile Include="ViewManager.cpp" />
+    <ClCompile Include="ViewportStateEntities.cpp" />
+    <ClCompile Include="ViewportStateTiles.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RenderWindow.cpp" />
+    <ClCompile Include="ScrolledTextWindow.cpp" />
+    <ClCompile Include="SpriteView.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileView.cpp" />
+    <ClCompile Include="Viewport.cpp" />
+    <ClCompile Include="WorldGlobals.cpp" />
+    <ClCompile Include="WorldStartDialog.cpp" />
+    <ClCompile Include="wxTreeItem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionData.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Assert.h" />
+    <ClInclude Include="BuildPackage.h" />
+    <ClInclude Include="BuildPackageAction.h" />
+    <ClInclude Include="BuildPackageAVEffect.h" />
+    <ClInclude Include="BuildPackageBattlePattern.h" />
+    <ClInclude Include="BuildPackageCharacterClassGroup.h" />
+    <ClInclude Include="BuildPackageCombatChain.h" />
+    <ClInclude Include="BuildPackageGeneral.h" />
+    <ClInclude Include="BuildPackageAsset.h" />
+    <ClInclude Include="BuildPackageEntities.h" />
+    <ClInclude Include="BuildPackageField.h" />
+    <ClInclude Include="BuildPackageGameData.h" />
+    <ClInclude Include="BuildPackageList.h" />
+    <ClInclude Include="BuildPackageModulators.h" />
+    <ClInclude Include="BuildPackageNameValuePair.h" />
+    <ClInclude Include="BuildPackageOffset.h" />
+    <ClInclude Include="BuildPackageRegistries.h" />
+    <ClInclude Include="BuildPackageRegistryReference.h" />
+    <ClInclude Include="BuildPackageTile.h" />
+    <ClInclude Include="BuildPackageVariant.h" />
+    <ClInclude Include="BuildPackageWorldStart.h" />
+    <ClInclude Include="BuildScribe.h" />
+    <ClInclude Include="CCPOperation.h" />
+    <ClInclude Include="ChildProcesses.h" />
+    <ClInclude Include="DataBreakdownAssetReference.h" />
+    <ClInclude Include="DataBreakdownCombatChain.h" />
+    <ClInclude Include="DataBase.h" />
+    <ClInclude Include="DataBreakdownAssets.h" />
+    <ClInclude Include="DataBreakdownAVEffect.h" />
+    <ClInclude Include="DataBreakdownBase.h" />
+    <ClInclude Include="DataBreakdownBattlePattern.h" />
+    <ClInclude Include="DataBreakdownColor.h" />
+    <ClInclude Include="DataBreakdownCombatTransaction.h" />
+    <ClInclude Include="DataBreakdownCommon.h" />
+    <ClInclude Include="DataBreakdownCommonKey.h" />
+    <ClInclude Include="DataBreakdownElement.h" />
+    <ClInclude Include="DataBreakdownEntities.h" />
+    <ClInclude Include="DataBreakdownField.h" />
+    <ClInclude Include="DataBreakdownGameData.h" />
+    <ClInclude Include="DataBreakdownGeneral.h" />
+    <ClInclude Include="DataBreakdownModulators.h" />
+    <ClInclude Include="DataBreakdownNameValuePair.h" />
+    <ClInclude Include="DataBreakdownOffset.h" />
+    <ClInclude Include="DataBreakdownParticleFountain.h" />
+    <ClInclude Include="DataBreakdownRegistries.h" />
+    <ClInclude Include="DataBreakdownRegistryReference.h" />
+    <ClInclude Include="DataBreakdownScriptInstance.h" />
+    <ClInclude Include="DataBreakdownSenses.h" />
+    <ClInclude Include="DataBreakdownTiles.h" />
+    <ClInclude Include="DataBreakdownVariant.h" />
+    <ClInclude Include="DataBreakdownWXItemData.h" />
+    <ClInclude Include="DataView.h" />
+    <ClInclude Include="DataViewSelection.h" />
+    <ClInclude Include="DataViewState.h" />
+    <ClInclude Include="DataViewStateEntities.h" />
+    <ClInclude Include="DataViewStateAssets.h" />
+    <ClInclude Include="DataViewStateGameData.h" />
+    <ClInclude Include="DataViewStateRegistries.h" />
+    <ClInclude Include="DataViewStateTiles.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="DirectionData.h" />
+    <ClInclude Include="EntityCreator.h" />
+    <ClInclude Include="EntityData.h" />
+    <ClInclude Include="EntityViewManager.h" />
+    <ClInclude Include="EquipSlotData.h" />
+    <ClInclude Include="ModulatorData.h" />
+    <ClInclude Include="OutputView.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="ExitException.h" />
+    <ClInclude Include="FixedPointValidator.h" />
+    <ClInclude Include="GridLines.h" />
+    <ClInclude Include="GridPositionDialog.h" />
+    <ClInclude Include="BattlePatternEditor.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageAsset.h" />
+    <ClInclude Include="ImageRegistry.h" />
+    <ClInclude Include="BoxOperation.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandStack.h" />
+    <ClInclude Include="CurrentWorld.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="InternalShaders.h" />
+    <ClInclude Include="ItemData.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="MoveOperation.h" />
+    <ClInclude Include="Optional.h" />
+    <ClInclude Include="PreviewOperation.h" />
+    <ClInclude Include="StringButtonProperty.h" />
+    <ClInclude Include="QuestData.h" />
+    <ClInclude Include="Registry.h" />
+    <ClInclude Include="GraphicsHandler.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="SettingsDialog.h" />
+    <ClInclude Include="SettingsScribe.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteListView.h" />
+    <ClInclude Include="AutoTextControl.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="StringGroup.h" />
+    <ClInclude Include="StringSelectionDialog.h" />
+    <ClInclude Include="UndefAssert.h" />
+    <ClInclude Include="UnifiedAccess.h" />
+    <ClInclude Include="VariantData.h" />
+    <ClInclude Include="ViewportMode.h" />
+    <ClInclude Include="ViewportStateBase.h" />
+    <ClInclude Include="WorldGlobals.h" />
+    <ClInclude Include="WorldStartDialog.h" />
+    <ClInclude Include="wxTreeItem.h" />
+    <ClInclude Include="wxWidgetsHelper.h" />
+    <ClInclude Include="TileViewManager.h" />
+    <ClInclude Include="ViewManager.h" />
+    <ClInclude Include="ViewportStateEntities.h" />
+    <ClInclude Include="ViewportStateTiles.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RenderWindow.h" />
+    <ClInclude Include="ScrolledTextWindow.h" />
+    <ClInclude Include="Selectable.h" />
+    <ClInclude Include="Selection.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SpriteView.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileView.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Viewport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Affecter\Affecter\Affecter.vcxproj">
+      <Project>{938d9705-692c-42bd-98ce-82aa21fad5f2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AGUI\AGUI\AGUI.vcxproj">
+      <Project>{7e06f873-7ae2-4224-a181-aa2344741ddf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Atmos\Atmos\Atmos.vcxproj">
+      <Project>{0e94289d-72e8-4a52-b32a-7b26c1a9ff0c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Inscription\Inscription\Inscription.vcxproj">
+      <Project>{93a2633a-46a4-4a08-aa6a-2c4dd75990b5}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,66 @@
+
+enum TimeType
+	SECONDS
+	MILLISECONDS
+	MICROSECONDS
+	NANOSECONDS
+end
+
+class FrameTimer(goal, type)
+	_isRunning = false
+	_start = 0
+	_goal = goal
+	_type = TimeType.SECONDS
+	
+	function Start()
+		self._isRunning = true
+		self._start = self._GetCurrentTime()
+	end
+	
+	function Stop()
+		self._isRunning = false
+		self._start = 0
+	end
+	
+	function IsActive()
+		return self._isRunning
+	end
+	
+	function GetElapsed()
+		if not self._isRunning: return 0
+		
+		denominator = nil
+		if self._type == TimeType.SECONDS
+			denominator = 1000000000
+		elif self._type == TimeType.MILLISECONDS
+			denominator = 1000000
+		elif self._type == TimeType.MICROSECONDS
+			denominator = 1000
+		elif self._type == TimeType.NANOSECONDS
+			denominator = 1
+		else
+			denominator = 1
+		end
+		
+		// Calculate and return elapsed
+		return (self._GetCurrentTime() - self._start) / denominator
+	end
+	
+	function HasReachedGoal()
+		if not self._isRunning
+			return false
+		end
+		
+		return self.GetElapsed() >= self._goal
+	end
+	
+	init
+		if parameter(1) != nil: self._type = parameter(1)
+	end
+	
+	function _GetCurrentTime()
+		return atmos_GetFrameTimeRaw()
+	end
+end
+
+export FrameTimer

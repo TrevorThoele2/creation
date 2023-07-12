@@ -1,0 +1,7 @@
+
+load m_SpeechShopkeeper
+load m_SpeechOutput
+
+atmos_LogError("1")
+atmos_OutputSpeechCharacters("Hello there :>")
+atmos_LogError("2")

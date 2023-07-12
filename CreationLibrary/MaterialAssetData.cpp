@@ -8,33 +8,19 @@ namespace Creation::Editing
 {
     namespace Data
     {
-        MaterialAsset::MaterialAsset(const String& name, const std::list<MaterialAssetPass>& passes) :
-            name(name), passes(passes)
+        MaterialAsset::MaterialAsset(const String& name, const String& asset, const String& executeName, const std::list<Variant>& parameters) :
+            name(name), asset(asset), executeName(executeName), parameters(parameters)
         {}
     }
 
     Arca::Index<Atmos::Asset::Material> CreateAtmos(Data::MaterialAsset data, Arca::Reliquary& reliquary)
     {
-        const auto findShader = [&reliquary](String name)
-        {
-            return reliquary.Do(Atmos::Asset::FindByName<Atmos::Asset::Shader> { name });
-        };
-
-        std::vector<Atmos::Asset::Material::Pass> createdPasses;
-        for (auto& pass : data.passes)
-        {
-            const auto vertexShader = findShader(pass.vertexShader);
-            const auto fragmentShader = findShader(pass.fragmentShader);
-            
-            if (vertexShader || fragmentShader)
-                createdPasses.emplace_back(vertexShader, fragmentShader);
-        }
-
-        if (createdPasses.empty())
-            return {};
-
-        auto created = reliquary.Do(Arca::Create<Atmos::Asset::Material> { data.name, createdPasses });
-        return created;
+        Atmos::Scripting::Parameters builtParameters;
+        builtParameters.reserve(data.parameters.size());
+        for (auto& parameter : data.parameters)
+            builtParameters.push_back(parameter.Build());
+        const auto asset = reliquary.Do(Atmos::Asset::FindByName<Atmos::Asset::Script>(data.asset));
+        return reliquary.Do(Arca::Create<Atmos::Asset::Material>(data.name, asset, data.executeName, builtParameters));
     }
 
     namespace Data
@@ -49,14 +35,18 @@ namespace Creation::Editing
         wxPropertyGrid& grid, const NexusHistory& nexusHistory, UI& ui)
         :
         NexusBatchCommon<Data::MaterialAsset>(grid),
-        name("Name", "Name", nullptr, grid, nexusHistory, ui)
+        name("Name", "Name", nullptr, grid, nexusHistory, ui),
+        asset("Script Asset", "Script Asset", nullptr, grid, nexusHistory, ui, "Script", [&ui]() { return AllScriptAssetNames(ui); }),
+        executeName("Execute Name", "Execute Name", nullptr, grid, nexusHistory, ui)
     {
         SetupProperties();
     }
 
     NexusBatch<Data::MaterialAsset>::NexusBatch(NexusBatch&& arg) noexcept :
         NexusBatchCommon(std::move(arg)),
-        name(std::move(arg.name))
+        name(std::move(arg.name)),
+        asset(std::move(arg.asset)),
+        executeName(std::move(arg.executeName))
     {
         SetupProperties();
     }
@@ -64,6 +54,7 @@ namespace Creation::Editing
     void NexusBatch<Data::MaterialAsset>::SetupProperties()
     {
         Auto(name, &Nexus::name);
+        Auto(executeName, &Nexus::executeName);
     }
 
     WorldElement<Data::MaterialAsset>::WorldElement(Nexus& nexus, Arca::Reliquary& reliquary) :
@@ -108,7 +99,8 @@ namespace Creation::Editing
             reliquary,
             CalculateLabel(data)),
         name(data.name, this, nexusHistory, ui, reliquary, "Name"),
-        passes(data.passes, this, nexusHistory, ui, reliquary, "Passes", []() { return "Pass"; })
+        executeName(data.executeName, this, nexusHistory, ui, reliquary, "Execute Name"),
+        parameters(data.parameters, this, nexusHistory, ui, reliquary, "Parameters")
     {
         SetupChildren();
     }
@@ -116,7 +108,8 @@ namespace Creation::Editing
     Nexus<Data::MaterialAsset>::Nexus(Nexus&& arg, NexusNode* parent) noexcept :
         EditableAssetNexusCommon(std::move(arg), parent),
         name(std::move(arg.name), this),
-        passes(std::move(arg.passes), this)
+        executeName(std::move(arg.executeName), this),
+        parameters(std::move(arg.parameters), this)
     {
         SetupChildren();
     }
@@ -130,7 +123,8 @@ namespace Creation::Editing
     void Nexus<Data::MaterialAsset>::SetupChildren()
     {
         autoHandler.Auto(*this, name, &DataT::name);
-        autoHandler.Auto(*this, passes, &DataT::passes);
+        autoHandler.Auto(*this, executeName, &DataT::executeName);
+        autoHandler.Auto(*this, parameters, &DataT::parameters);
 
         eventConnections =
         {

@@ -1,0 +1,52 @@
+
+// Parts: dictionary of IDs -> functions
+// Can also be a list
+	// If this is a list, it'll assign 0 to size - 1 as the IDs
+class SpeechRandomSwitch(parts)
+	function __call()
+		// Determine the type of IDs stored, then get a random ID
+		id = nil
+		firstKey = self._parts.front(false, true)
+		if firstKey.typeId() == BooleanType
+			id = atmos_GetRandomBool()
+		else
+			id = atmos_GetRandomInt64(firstKey, len(self._parts))
+		end
+		
+		self._parts[id]()
+	end
+	
+	function Reset()
+		for key, value in self._parts
+			if value provides Reset: value.Reset()
+		end
+	end
+	
+	// Returns copy of the added part
+	function AddPart(id, part)
+		self._parts += [id => part]
+		return self._parts.back()
+	end
+	
+	function Size()
+		return self._parts.len()
+	end
+	
+	_parts = [ => ]
+
+	init
+		if parts.typeId() == DictionaryType: self._parts = parts
+		
+		// Assign the list with IDs from 0 to size - 1
+		if parts.className() == List.className()
+			itr = parts.front()
+			count = 0
+			while itr.hasNext()
+				self._parts[count] = itr.value()
+				++count
+			end
+		end
+	end
+end
+
+export SpeechRandomSwitch

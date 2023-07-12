@@ -389,6 +389,16 @@ declare module Atmos {
             green: number;
             blue: number;
         }
+        
+        export interface Mesh {
+            vertices: Spatial.Point2D[];
+            indices: number[];
+        }
+
+        export interface Shaders {
+            vertex: Asset.Shader | null;
+            fragment: Asset.Shader | null;
+        }
 
         export interface ChangeColor extends Command {
             id: RelicId;
@@ -562,6 +572,113 @@ declare module Atmos {
         export interface CreateViewSlice extends Command {
             id: RelicId;
             box: Spatial.AxisAlignedBox2D;
+        }
+
+        export module Raster {
+            export interface Image {
+                asset: Asset.Image | null;
+                assetSlice: Spatial.AxisAlignedBox2D;
+                viewSlice: Spatial.AxisAlignedBox2D;
+                color: Color;
+
+                position: Spatial.Point2D;
+                size: Spatial.Size2D;
+                rotation: Spatial.Angle2D;
+                scalers: Spatial.Scalers2D;
+            }
+
+            export interface Line {
+                points: Spatial.Point2D[];
+                width: number;
+                color: Color;
+            }
+
+            export interface Region {
+                mesh: Mesh;
+            }
+
+            export interface Text {
+                string: string;
+                font: Asset.Font | null;
+                viewSlice: Spatial.AxisAlignedBox2D;
+                color: Color;
+                bold: boolean;
+                italics: boolean;
+                wrapWidth: number;
+
+                position: Spatial.Point2D;
+                rotation: Spatial.Angle2D;
+                scalers: Spatial.Scalers2D;
+            }
+
+            export interface DrawImage {
+                shaders: Shaders;
+                asset: Asset.Image | null;
+                assetSlice: Spatial.AxisAlignedBox2D;
+                viewSlice: Spatial.AxisAlignedBox2D;
+                color: Color;
+
+                position: Spatial.Point2D;
+                size: Spatial.Size2D;
+                rotation: Spatial.Angle2D;
+                scalers: Spatial.Scalers2D;
+            }
+
+            export interface DrawLine {
+                shaders: Shaders;
+                points: Spatial.Point2D[];
+                width: number;
+                color: Color;
+            }
+
+            export interface DrawRegion {
+                shaders: Shaders;
+                mesh: Mesh;
+            }
+
+            export interface DrawText {
+                shaders: Shaders;
+                string: string;
+                font: Asset.Font | null;
+                viewSlice: Spatial.AxisAlignedBox2D;
+                color: Color;
+                bold: boolean;
+                italics: boolean;
+                wrapWidth: number;
+
+                position: Spatial.Point2D;
+                rotation: Spatial.Angle2D;
+                scalers: Spatial.Scalers2D;
+            }
+
+            export type Command = DrawImage | DrawLine | DrawRegion | DrawText;
+
+            export interface ExecutingMaterial extends Relic {
+                images: Image[];
+                texts: Text[];
+                lines: Line[];
+                regions: Region[];
+
+                recordedCommands: Command[];
+            }
+        
+            export interface RecordCommands extends Atmos.Command {
+                commands: Raster.Command[];
+            }
+        }
+    }
+
+    export module Scripting {
+        export interface Script extends Relic {
+            asset: Asset.Script | null;
+            executeName: string;
+            parameters: Variant[];
+        }
+
+        export interface CreateScript extends Command {
+            asset: Asset.Script | null;
+            executeName: string;
+            parameters: Variant[];
         }
     }
 
@@ -1069,6 +1186,19 @@ declare module Atmos {
                 T: Atmos.Destroy;
                 ReturnT: void;
             }
+
+            export module Raster {
+                export type ExecutingMaterial = {
+                    typeName: "Atmos::Render::Raster::ExecutingMaterial";
+                    T: Atmos.Render.Raster.ExecutingMaterial;
+                }
+
+                export type RecordCommands = {
+                    typeName: "Atmos::Render::Raster::RecordCommands";
+                    T: Atmos.Render.Raster.RecordCommands;
+                    ReturnT: void;
+                }
+            }
         }
 
         export module Spatial {
@@ -1115,6 +1245,25 @@ declare module Atmos {
 
             export type DestroyBounds = {
                 typeName: "Arca::Destroy<Atmos::Spatial::Bounds>";
+                T: Atmos.Destroy;
+                ReturnT: void;
+            }
+        }
+
+        export module Scripting {
+            export type Script = {
+                typeName: "Atmos::Scripting::Script";
+                T: Atmos.Scripting.Script;
+            }
+
+            export type CreateScript = {
+                typeName: "Arca::Create<Atmos::Scripting::Script>";
+                T: Atmos.Scripting.CreateScript;
+                ReturnT: Atmos.Scripting.Script;
+            }
+
+            export type DestroyScript = {
+                typeName: "Arca::Destroy<Atmos::Scripting::Script>";
                 T: Atmos.Destroy;
                 ReturnT: void;
             }
@@ -1472,6 +1621,16 @@ declare module Atmos {
             export module DestroyViewSlice {
                 export const typeName: "Arca::Destroy<Atmos::Render::ViewSlice>";
             }
+
+            export module Raster {
+                export module ExecutingMaterial {
+                    export const typeName: "Atmos::Render::Raster::ExecutingMaterial";
+                }
+
+                export module RecordCommands {
+                    export const typeName: "Atmos::Render::Raster::RecordCommands";
+                }
+            }
         }
 
         export module Spatial {
@@ -1505,6 +1664,20 @@ declare module Atmos {
 
             export module DestroyBounds {
                 export const typeName: "Arca::Destroy<Atmos::Spatial::Bounds>";
+            }
+        }
+
+        export module Scripting {
+            export module Script {
+                export const typeName: "Atmos::Scripting::Script";
+            }
+
+            export module CreateScript {
+                export const typeName: "Arca::Create<Atmos::Scripting::Script>";
+            }
+
+            export module DestroyScript {
+                export const typeName: "Arca::Destroy<Atmos::Scripting::Script>";
             }
         }
 
@@ -1591,6 +1764,7 @@ declare module Atmos {
         Atmos.TypeTraits.Render.DestroyRenderCore |
         Atmos.TypeTraits.Render.CreateViewSlice |
         Atmos.TypeTraits.Render.DestroyViewSlice |
+        Atmos.TypeTraits.Render.Raster.RecordCommands |
         Atmos.TypeTraits.Spatial.MoveBounds |
         Atmos.TypeTraits.Spatial.RotateBounds |
         Atmos.TypeTraits.Spatial.ScaleBounds |
@@ -1598,6 +1772,8 @@ declare module Atmos {
         Atmos.TypeTraits.Spatial.ToWorldPoint3D |
         Atmos.TypeTraits.Spatial.CreateBounds |
         Atmos.TypeTraits.Spatial.DestroyBounds |
+        Atmos.TypeTraits.Scripting.CreateScript |
+        Atmos.TypeTraits.Scripting.DestroyScript |
         Atmos.TypeTraits.UI.CreateImage |
         Atmos.TypeTraits.UI.DestroyImage |
         Atmos.TypeTraits.UI.CreateText |
@@ -1626,11 +1802,13 @@ declare module Atmos {
         Atmos.TypeTraits.Render.DynamicImage |
         Atmos.TypeTraits.Render.DynamicText |
         Atmos.TypeTraits.Render.GridRegion |
-        Atmos.TypeTraits.Render.Line;
+        Atmos.TypeTraits.Render.Line |
+        Atmos.TypeTraits.Scripting.Script;
 
     export type GlobalRelicTypeTraits =
         Atmos.TypeTraits.Diagnostics.Statistics |
         Atmos.TypeTraits.Render.Camera |
+        Atmos.TypeTraits.Render.Raster.ExecutingMaterial |
         Atmos.TypeTraits.Input.Information;
 
     export type ShardTypeTraits =
@@ -1689,6 +1867,7 @@ declare module Atmos {
         [Atmos.Traits.Render.DestroyRenderCore.typeName]: Atmos.TypeTraits.Render.DestroyRenderCore;
         [Atmos.Traits.Render.CreateViewSlice.typeName]: Atmos.TypeTraits.Render.CreateViewSlice;
         [Atmos.Traits.Render.DestroyViewSlice.typeName]: Atmos.TypeTraits.Render.DestroyViewSlice;
+        [Atmos.Traits.Render.Raster.RecordCommands.typeName]: Atmos.TypeTraits.Render.Raster.RecordCommands;
         [Atmos.Traits.Spatial.MoveBounds.typeName]: Atmos.TypeTraits.Spatial.MoveBounds;
         [Atmos.Traits.Spatial.RotateBounds.typeName]: Atmos.TypeTraits.Spatial.RotateBounds;
         [Atmos.Traits.Spatial.ScaleBounds.typeName]: Atmos.TypeTraits.Spatial.ScaleBounds;
@@ -1696,6 +1875,8 @@ declare module Atmos {
         [Atmos.Traits.Spatial.ToWorldPoint3D.typeName]: Atmos.TypeTraits.Spatial.ToWorldPoint3D;
         [Atmos.Traits.Spatial.CreateBounds.typeName]: Atmos.TypeTraits.Spatial.CreateBounds;
         [Atmos.Traits.Spatial.DestroyBounds.typeName]: Atmos.TypeTraits.Spatial.DestroyBounds;
+        [Atmos.Traits.Scripting.CreateScript.typeName]: Atmos.TypeTraits.Scripting.CreateScript;
+        [Atmos.Traits.Scripting.DestroyScript.typeName]: Atmos.TypeTraits.Scripting.DestroyScript;
         [Atmos.Traits.UI.CreateImage.typeName]: Atmos.TypeTraits.UI.CreateImage;
         [Atmos.Traits.UI.DestroyImage.typeName]: Atmos.TypeTraits.UI.DestroyImage;
         [Atmos.Traits.UI.CreateText.typeName]: Atmos.TypeTraits.UI.CreateText;
@@ -1723,9 +1904,11 @@ declare module Atmos {
         [Atmos.Traits.Render.DynamicText.typeName]: Atmos.TypeTraits.Render.DynamicText;
         [Atmos.Traits.Render.GridRegion.typeName]: Atmos.TypeTraits.Render.GridRegion;
         [Atmos.Traits.Render.Line.typeName]: Atmos.TypeTraits.Render.Line;
+        [Atmos.Traits.Scripting.Script.typeName]: Atmos.TypeTraits.Scripting.Script;
 
         [Atmos.Traits.Diagnostics.Statistics.typeName]: Atmos.TypeTraits.Diagnostics.Statistics;
         [Atmos.Traits.Render.Camera.typeName]: Atmos.TypeTraits.Render.Camera;
+        [Atmos.Traits.Render.Raster.ExecutingMaterial.typeName]: Atmos.TypeTraits.Render.Raster.ExecutingMaterial;
         [Atmos.Traits.Input.Information.typeName]: Atmos.TypeTraits.Input.Information;
 
         [Atmos.Traits.Spatial.Bounds.typeName]: Atmos.TypeTraits.Spatial.Bounds;

@@ -1,6 +1,5 @@
 #include "ImageCoreData.h"
 
-#include "AtmosRender.h"
 #include <Atmos/FindAssetByName.h>
 
 namespace Creation::Editing

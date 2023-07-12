@@ -1,0 +1,75 @@
+
+load m_SpeechShopkeeper
+load m_SpeechOutput
+
+greeting = SpeechOutput("Hello", 1, 10, true, 1)
+enter = "What would you like to do?"
+buy = "Buy"
+sell = "Sell"
+leave = "Leave"
+onNoItems = SpeechOutput("YOU HAVE NO ITEMS YOU SILLY MAN", 1, 10, true, 1)
+onLeave = SpeechOutput("Goodbye then :<", 1, 10, true, 1)
+onEnterBuy = SpeechOutput("Here is the buy", 1, 10, true, 1)
+onEnterSell = SpeechOutput("Here is the sell", 1, 10, true, 1)
+buySuccess = SpeechOutput("HOPE YOU ENJOY WHAT YOU BOUGHT", 1, 10, true, 1)
+sellSuccess = SpeechOutput("I WILL ENJOY WHAT I BOUGHT", 1, 10, true, 1)
+
+SimpleShopkeeperSpeech(greeting, enter, buy, sell, leave, onNoItems, onLeave, onEnterBuy, onEnterSell, buySuccess, sellSuccess)
+
+// Branches with outputs
+/*
+graph = SpeechGraph()
+graph.AddPart(SpeechOutput("Hello", 1, 10, true, 1))
+graph.AddPart(SpeechOutput("Middle", 1, 10, true, 1))
+
+branch = SpeechBranch()
+branch.AddPart(SpeechOutput("Branch1", 1, 10, true, 1))
+branch.AddPart(SpeechOutput("Branch2", 1, 10, true, 1))
+branch.AddPart(SpeechOutput("Branch3", 1, 10, true, 1))
+graph.AddPart(branch)
+
+graph.AddPart(SpeechOutput("Goodbye", 1, 10, true, 1))
+graph()
+*/
+
+// Input
+/*
+input = SpeechInput("Hello, friend")
+input.AddPart(Pair("First", SpeechOutput("Hello", 1, 10, true, 1)))
+input.AddPart(Pair("Second", SpeechOutput("Goodbye", 1, 10, true, 1)))
+input()
+*/
+
+// Loop test
+/*
+helloOutput = SpeechOutput("Hello", 1, 10, true, 1)
+goodbyeOutput = SpeechOutput("Goodbye", 1, 10, true, 1)
+
+graph = SpeechGraph()
+graph.AddPart(helloOutput)
+graph.AddPart(goodbyeOutput)
+graph.AddPart(graph.CreateLoop(helloOutput))
+graph()
+*/
+
+// Random switch test
+/*
+graph = SpeechGraph()
+
+oneOutput = SpeechOutput("One", 1, 10, true, 1)
+twoOutput = SpeechOutput("Two", 1, 10, true, 1)
+threeOutput = SpeechOutput("Three", 1, 10, true, 1)
+fourOutput = SpeechOutput("Four", 1, 10, true, 1)
+fiveOutput = SpeechOutput("Five", 1, 10, true, 1)
+
+randomSwitch = SpeechRandomSwitch()
+randomSwitch.AddPart(1, oneOutput)
+randomSwitch.AddPart(2, twoOutput)
+randomSwitch.AddPart(3, threeOutput)
+randomSwitch.AddPart(4, fourOutput)
+randomSwitch.AddPart(5, fiveOutput)
+
+graph.AddPart(randomSwitch)
+graph.AddPart(graph.CreateLoop(randomSwitch))
+graph()
+*/

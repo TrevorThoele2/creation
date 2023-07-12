@@ -1,0 +1,102 @@
+
+load m_Pair
+
+// Output: string
+// Reset: if true, will reset the speech handler's string
+// Parts: List of Pairs(string : part)
+class SpeechInput(parts, output, reset)
+	function __call()
+		atmos_SetSpeechCharacters(self._output)
+	
+		// Fill an array to pass to atmos
+		array = []
+		for key, value in self._parts
+			array += value.first
+		end
+		
+		// Pass array
+		atmos_ActivateSpeechInput(array)
+	
+		// Spinwait on the player to select a part
+		loop
+			// Wait until the next action pressed
+			atmos_Suspend()
+		
+			if atmos_IsActionPressed(atmos_Action.Use)
+				position = atmos_GetSpeechInputPosition()
+				self._selectedPart = self._parts[position]
+				break
+			end
+		end
+		
+		if self._reset == true: atmos_ClearSpeechCharacters()
+		
+		atmos_DeactivateSpeechInput()
+		self._selectedPart.second()
+	end
+	
+	function Reset()
+		self._selectedPart = nil
+		
+		for key, value in self._parts
+			if value.second provides Reset: value.second.Reset()
+		end
+	end
+	
+	// Part to add is pair of (string, speech part)
+	// Returns copy of the added part
+	function AddPart(part)
+		if part.className() != Pair.className()
+			typeName = part.toString()
+			if part.typeId() == StringType: typeName = "String"
+			
+			atmos_LogError("A part was attempted to add to a SpeechInput that was not a Pair. Part type: " + typeName)
+			return
+		end
+	
+		self._parts += [self.Size() + 1 => part]
+		return self._parts.back().second
+	end
+	
+	function Size()
+		return self._parts.len()
+	end
+	
+	// Only works with strings
+	function SetOutput(set)
+		if set.typeId() == StringType: self._output = set
+	end
+	
+	_output = ""
+	_reset = true
+	// Parts will always be a dictionary. Is 0-based
+	_parts = [ => ]
+	_selectedPart = nil
+	
+	init
+		// Set output
+		self.SetOutput(output)
+		
+		// Set reset
+		if reset.typeId() == BooleanType: self._reset = reset
+	
+		// Set parts
+		if parts == nil
+			// Nothing
+		elif parts.typeId() != List.typeId()
+			self.AddPart(parts)
+		else
+			// Parts is list
+			loopVar = 1
+			for i in parts
+				self.AddPart(i)
+			end
+		end
+	end
+	
+	function _IsSelectedPartValid()
+		return self._selectedPart.typeId() != NilType
+	end
+end
+
+export SpeechInput

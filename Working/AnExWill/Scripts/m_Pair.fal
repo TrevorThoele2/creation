@@ -1,0 +1,7 @@
+
+class Pair(first, second)
+	first = first
+	second = second
+end
+
+export Pair

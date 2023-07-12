@@ -14,7 +14,7 @@ namespace Creation::Editing
             Atmos::Scripting::Parameters builtParameters;
             builtParameters.reserve(parameters.size());
             for (auto& parameter : parameters)
-                builtParameters.push_back(parameter.Build(context));
+                builtParameters.push_back(parameter.Build());
             const auto asset = context.reliquary.Do(Atmos::Asset::FindByName<Atmos::Asset::Script>(assetName));
             return context.reliquary.Do(Arca::Create<Atmos::Scripting::Script>(asset, executeName, builtParameters));
         }

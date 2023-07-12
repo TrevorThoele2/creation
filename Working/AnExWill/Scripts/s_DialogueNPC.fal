@@ -1,0 +1,7 @@
+
+load m_SpeechOutput
+load m_SpeechGraph
+
+graph = SpeechGraph()
+graph.AddPart(SpeechOutput("Hello, I am the NPC.", 1, 10, true, 1))
+graph()

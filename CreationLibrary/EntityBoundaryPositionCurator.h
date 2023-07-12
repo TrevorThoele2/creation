@@ -8,6 +8,8 @@
 #include <Atmos/Camera.h>
 #include <Atmos/GridPoint.h>
 #include <Atmos/AxisAlignedBox3D.h>
+#include <Atmos/RasterRegion.h>
+#include <Atmos/PreparedRaster.h>
 
 #include "EntityBoundaryRenderInformation.h"
 
@@ -16,7 +18,7 @@ namespace Creation::Editing
     class EntityBoundaryPositionCurator final : public Atmos::Render::ObjectCurator
     {
     public:
-        EntityBoundaryPositionCurator(Init init);
+        explicit EntityBoundaryPositionCurator(Init init);
     protected:
         void WorkImpl(
             Atmos::Spatial::AxisAlignedBox3D cameraBox,
@@ -39,7 +41,7 @@ namespace Creation::Editing
             {}
         };
 
-        [[nodiscard]] Atmos::Render::RenderRegion RenderOf(
+        [[nodiscard]] Atmos::Render::Raster::Prepared<Atmos::Render::Raster::Region> Raster(
             const Region& region,
             Atmos::Spatial::Point2D cameraTopLeft,
             const Atmos::Render::MainSurface& mainSurface);

@@ -1,13 +1,13 @@
 #include "RenderCoreData.h"
 
-#include "AtmosRender.h"
+#include "AtmosAsset.h"
 #include <Atmos/FindAssetByName.h>
 
 namespace Creation::Editing
 {
     namespace Data
     {
-        RenderCore::RenderCore() : material(atmosDefaultImageMaterialName)
+        RenderCore::RenderCore() : material(atmosDefaultMaterialName)
         {}
 
         Atmos::Render::RenderCore RenderCore::Build(Build::Context& context) const

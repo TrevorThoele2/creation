@@ -1,0 +1,97 @@
+
+function GenerateAndFollowPath(entity, node)
+	// Generate path to the new node
+	path = atmos_FindPath(atmos_GetEntityPosition(entity), node)
+	
+	// Run through the path
+	for pathNode in path
+		// Suspend until we can move the entity at a basic level
+		while not atmos_CanMoveEntity(entity): atmos_Suspend()
+		
+		entityPosition = atmos_GetEntityPosition(entity)
+		moveDirection = atmos_Direction.Up
+		
+		// Check if we can move the entity into the next path position
+		if not atmos_CanMoveEntity(entity, pathNode)
+			// If we can't, we're going to need to request a new path
+			path = atmos_FindPath(atmos_GetEntityPosition(entity), node)
+			pathNode = path.front()
+		else
+			// We can move the entity into the next path node
+			// Determine the direction to move the entity
+			if pathNode.col == entityPosition.col
+				if pathNode.row < entityPosition.row
+					moveDirection = atmos_Direction.Up
+				else
+					moveDirection = atmos_Direction.Down
+				end
+			else
+				if pathNode.col < entityPosition.col
+					moveDirection = atmos_Direction.Left
+				else
+					moveDirection = atmos_Direction.Right
+				end
+			end
+			
+			// Direction has been determined
+			atmos_MoveEntityDirection(entity, moveDirection)
+			atmos_Suspend()
+		end
+	end
+end
+
+// A loop will move directly from the end of the patrol to the beginning
+// A reverse patrol type will reverse when hitting the end of the nodes (and travel the opposite way)
+enum PatrolType
+	Loop,
+	Reverse
+end
+
+// Nodes: array/list of atmos_TilePosition's
+// Type: PatrolType
+function PatrolAI(nodes, type)
+	// Check nodes' type
+	if nodes.typeId() != ArrayType and nodes.typeId() != List.typeId(): raise "PatrolAI requires nodes to be an array or a list"
+	
+	// Make sure all of the entries in the list are tile positions
+	for i in nodes
+		if i.className() != atmos_TilePosition.className(): raise "PatrolAI requires the node list to be entirely made up of atmos_TilePosition's"
+	end
+	
+	// Check type's type
+	if type.typeId() != NumericType or (type != PatrolType.Loop and type != PatrolType.Reverse): raise "PatrolAI requires the type to be a value from PatrolType"
+	
+	// Get the focused entity
+	focusedEntity = atmos_GetCurrentAIEntity()
+	if focusedEntity.typeId() == NilType: return
+	
+	while true
+		for i in nodes
+			GenerateAndFollowPath(focusedEntity, i)
+		end
+		
+		if type == PatrolType.Loop
+			GenerateAndFollowPath(focusedEntity, nodes.front())
+		elif type == PatrolType.Reverse
+			// Reverse the collection
+			count = 0
+			length = nodes.len()
+			forwardItr = Iterator(nodes)
+			backwardItr = Iterator(nodes, true)
+			
+			// Run through two iterators, swapping each
+			loop
+				temp = forwardItr.value(backwardItr.value())
+				atmos_LogError(temp.describe())
+				backwardItr.value(temp)
+			
+				forwardItr.next()
+				backwardItr.prev()
+				++count
+			end count > length
+		end
+	end
+end
+
+export PatrolAI
+export PatrolType

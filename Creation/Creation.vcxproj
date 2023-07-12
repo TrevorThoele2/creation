@@ -74,7 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Working\</OutDir>
     <TargetName>$(ProjectName)_debug</TargetName>
-    <IncludePath>..\;..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\;..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\sdl_mixer\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\externaldependencies\sdl2\lib\x86;..\..\externaldependencies\sdl_mixer\lib\x86;..\..\externaldependencies\vulkan\Lib32;..\..\externaldependencies\freeimage\Dist\x32;..\..\externaldependencies\wxwidgets\lib\vc_lib;..\..\externaldependencies\boost\stage\lib;..\..\externaldependencies\sdl_ttf\lib\x86;..\..\externaldependencies\v8\v8\out.gn\ia32.debug\obj;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

@@ -67,12 +67,13 @@ bool MockGraphicsManager::ShouldReconstructInternals() const
 void MockGraphicsManager::ReconstructInternals(GraphicsReconstructionObjects objects)
 {}
 
-void MockGraphicsManager::DrawFrameImpl(const AllRenders& allRenders, const Spatial::Point2D& mapPosition)
+void MockGraphicsManager::DrawFrameImpl(
+    const Raster::Commands & commands,
+    const Spatial::Point2D & mapPosition)
 {
-    imageRenders.insert(imageRenders.end(), allRenders.images.begin(), allRenders.images.end());
-    lineRenders.insert(lineRenders.end(), allRenders.lines.begin(), allRenders.lines.end());
-    regionRenders.insert(regionRenders.end(), allRenders.regions.begin(), allRenders.regions.end());
-    textRenders.insert(textRenders.end(), allRenders.texts.begin(), allRenders.texts.end());
+    for (auto& surface : commands)
+        for (auto& command : surface.second)
+            this->commands.push_back(command);
 }
 
 void MockGraphicsManager::ResourceDestroyingImpl(Asset::Resource::Image& resource)

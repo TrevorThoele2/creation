@@ -10,6 +10,9 @@ namespace Creation::Editing
 {
     namespace Data
     {
+        ScriptAsset::ScriptAsset(const File::Path& filePath) : filePath(filePath)
+        {}
+
         void ScriptAsset::Build(Build::Context& context) const
         {
             try

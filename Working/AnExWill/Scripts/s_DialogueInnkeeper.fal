@@ -1,0 +1,14 @@
+
+load m_SpeechInnkeeper
+load m_SpeechOutput
+
+cost = 50
+greetings = SpeechOutput("Hello, friend, innkeeper here.", 1, 10, true, 1)
+ask = "Would you like to rest here?"
+yes = "Yes"
+no = "No"
+notEnoughGold = SpeechOutput("You don't have enough gold :C", 1, 10, true, 1)
+worked = SpeechOutput("Enjoy, friend", 1, 10, true, 1)
+onNo = SpeechOutput("FINE", 1, 10, true, 1)
+
+SimpleInnkeeperSpeech(cost, greetings, ask, yes, no, notEnoughGold, worked, onNo)

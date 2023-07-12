@@ -1,8 +1,7 @@
 #include "EntityBoundaryPositionCurator.h"
 
-#include <Atmos/RenderRegion.h>
 #include <Atmos/RenderAlgorithms.h>
-#include <Atmos/StagedRenders.h>
+#include <Atmos/StagedRasters.h>
 
 namespace Creation::Editing
 {
@@ -49,13 +48,13 @@ namespace Creation::Editing
             points->emplace(point);
         }
 
-        const auto stagedRenders = MutablePointer().Of<Atmos::Render::StagedRenders>();
-        stagedRenders->regions.push_back(RenderOf(standard, cameraTopLeft, mainSurface));
-        stagedRenders->regions.push_back(RenderOf(selected, cameraTopLeft, mainSurface));
-        stagedRenders->regions.push_back(RenderOf(ghost, cameraTopLeft, mainSurface));
+        const auto stagedRasters = MutablePointer().Of<Atmos::Render::Raster::Staged>();
+        stagedRasters->regions.push_back(Raster(standard, cameraTopLeft, mainSurface));
+        stagedRasters->regions.push_back(Raster(selected, cameraTopLeft, mainSurface));
+        stagedRasters->regions.push_back(Raster(ghost, cameraTopLeft, mainSurface));
     }
 
-    Atmos::Render::RenderRegion EntityBoundaryPositionCurator::RenderOf(
+    Atmos::Render::Raster::Prepared<Atmos::Render::Raster::Region> EntityBoundaryPositionCurator::Raster(
         const Region& region,
         Atmos::Spatial::Point2D cameraTopLeft,
         const Atmos::Render::MainSurface& mainSurface)
@@ -74,13 +73,19 @@ namespace Creation::Editing
 
         constexpr auto z = std::numeric_limits<Atmos::Spatial::Grid::Point::Value>::max() - 1 / 2;
 
-        return Atmos::Render::RenderRegion
+        return std::tuple
         {
-            mesh,
-            static_cast<float>(z),
-            region.material,
-            ToRenderSpace(Atmos::Spatial::Space::World),
-            mainSurface.Resource()
+            Atmos::Render::Raster::Region
+            {
+                .material = region.material,
+                .mesh = mesh
+            },
+            mainSurface.Resource(),
+            Atmos::Render::Raster::Order
+            {
+                .space = Atmos::Render::Ordering(Atmos::Spatial::Space::World),
+                .z = static_cast<float>(z)
+            }
         };
     }
 
@@ -97,7 +102,7 @@ namespace Creation::Editing
     Atmos::Spatial::AxisAlignedBox3D EntityBoundaryPositionCurator::BoxFor(
         const Index& index)
     {
-        const auto cellSize = Atmos::Spatial::Grid::CellSize<float>;
+        constexpr auto cellSize = Atmos::Spatial::Grid::CellSize<float>;
         return Atmos::Spatial::AxisAlignedBox3D
         {
             {

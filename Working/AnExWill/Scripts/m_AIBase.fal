@@ -1,0 +1,39 @@
+
+function AI_FollowPath(path, entity)
+	for pathNode in path
+		// Suspend until we can move the entity at a basic level
+		while not atmos_CanMoveEntity(entity): atmos_Suspend()
+		
+		entityPosition = atmos_GetEntityPosition(entity)
+		moveDirection = atmos_Direction.Up
+		
+		// Check if we can move the entity into the next path position
+		if not atmos_CanMoveEntity(entity, pathNode)
+			// If we can't, we're going to need to request a new path
+			path = atmos_FindPath(atmos_GetEntityPosition(entity), node)
+			pathNode = path.front()
+		else
+			// We can move the entity into the next path node
+			// Determine the direction to move the entity
+			if pathNode.col == entityPosition.col
+				if pathNode.row < entityPosition.row
+					moveDirection = atmos_Direction.Up
+				else
+					moveDirection = atmos_Direction.Down
+				end
+			else
+				if pathNode.col < entityPosition.col
+					moveDirection = atmos_Direction.Left
+				else
+					moveDirection = atmos_Direction.Right
+				end
+			end
+			
+			// Direction has been determined
+			atmos_MoveEntityDirection(entity, moveDirection)
+			atmos_Suspend()
+		end
+	end
+end
+
+export AI_FollowPath

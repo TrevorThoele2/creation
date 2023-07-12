@@ -1,0 +1,4 @@
+
+load m_AIWander
+
+WanderAI(atmos_TilePosition(2, -7, 0), 1, 50.5)

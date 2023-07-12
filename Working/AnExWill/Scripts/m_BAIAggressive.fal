@@ -1,0 +1,12 @@
+
+load m_BAIBase
+
+function AggressiveBattleAI()
+	focusedEntity = atmos_GetCurrentAIEntity()
+	while true
+		atmos_LogError("Executed")
+		BattleAI_Attack(focusedEntity, atmosBattle_FindClosestPlayer(atmos_GetEntityPosition(focusedEntity)))
+	end
+end
+
+export AggressiveBattleAI

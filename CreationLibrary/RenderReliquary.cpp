@@ -10,7 +10,7 @@
 #include "EntityBoundaryRenderInformation.h"
 #include "EntityBoundaryRenderInformationCurator.h"
 #include "EntityRenderInformation.h"
-#include "AtmosRender.h"
+#include "AtmosAsset.h"
 #include "EntityRenderInformationCurator.h"
 #include <Atmos/TypeRegistration.h>
 #include <Atmos/FrameInformation.h>
@@ -19,6 +19,7 @@
 #include <Atmos/FileCurator.h>
 #include <Atmos/LoggingCurator.h>
 #include <Atmos/LoggingInformation.h>
+#include <Inscription/Plaintext.h>
 
 namespace Creation
 {
@@ -26,6 +27,7 @@ namespace Creation
         Atmos::Render::GraphicsManager& graphicsManager,
         Atmos::Render::TextManager& textManager,
         Atmos::Asset::Resource::Manager& assetResourceManager,
+        Atmos::Scripting::Manager& scriptManager,
         Atmos::Spatial::Size2D clientSize,
         Atmos::Logging::Logger& logger,
         void* hwnd)
@@ -37,7 +39,7 @@ namespace Creation
             textManager,
             clientSize,
             hwnd);
-
+        RegisterTypes(reliquaryOrigin, scriptManager);
         Atmos::Asset::RegisterTypes(reliquaryOrigin, assetResourceManager);
         Atmos::Spatial::RegisterTypes(reliquaryOrigin);
         Atmos::Diagnostics::RegisterTypes(reliquaryOrigin);
@@ -83,53 +85,62 @@ namespace Creation
             .CuratorCommandPipeline<Atmos::Work>(workPipeline);
 
         auto reliquary = reliquaryOrigin.Actualize();
+        
+        const auto basicMaterial = CreateScript("basic_material_script.ts", *reliquary);
 
-        const auto imageMaterial = CreateMaterial(
-            ShaderDefinition{ "image_vertex.vert", "creation_internal_image_vertex" },
-            ShaderDefinition{ "image_fragment.frag", "creation_internal_image_fragment" },
-            "creation_internal_image",
-            *reliquary);
-        const auto selectedImageMaterial = CreateMaterial(
-            ShaderDefinition{ "selected_image_vertex.vert", "creation_internal_selected_image_vertex" },
-            ShaderDefinition{ "selected_image_fragment.frag", "creation_internal_selected_image_fragment" },
-            "creation_internal_selected_image",
-            *reliquary);
-        const auto ghostImageMaterial = CreateMaterial(
-            ShaderDefinition{ "ghost_image_vertex.vert", "creation_internal_ghost_image_vertex" },
-            ShaderDefinition{ "ghost_image_fragment.frag", "creation_internal_ghost_image_fragment" },
-            "creation_internal_ghost_image",
-            *reliquary);
+        const auto createBasicMaterial = [&](
+            const String& name, const ShaderDefinition& vertexDefinition, const ShaderDefinition& fragmentDefinition)
+        {
+            CreateShader(vertexDefinition, *reliquary);
+            CreateShader(fragmentDefinition, *reliquary);
+
+            return CreateMaterial(
+                name,
+                basicMaterial,
+                "main",
+                { vertexDefinition.storeName, fragmentDefinition.storeName },
+                *reliquary);
+        };
+        
         reliquary->Do(ChangeDefaultImageMaterials
             {
-                imageMaterial,
-                selectedImageMaterial,
-                ghostImageMaterial
+                .material = createBasicMaterial(
+                    "creation_internal_image",
+                    ShaderDefinition{ "vertex.vert", "creation_internal_vertex" },
+                    ShaderDefinition{ "fragment.frag", "creation_internal_fragment" }),
+                .selected = createBasicMaterial(
+                    "creation_internal_selected_image",
+                    ShaderDefinition{ "selected_image_vertex.vert", "creation_internal_selected_image_vertex" },
+                    ShaderDefinition{ "selected_image_fragment.frag", "creation_internal_selected_image_fragment" }),
+                .ghost = createBasicMaterial(
+                    "creation_internal_ghost_image",
+                    ShaderDefinition{ "ghost_image_vertex.vert", "creation_internal_ghost_image_vertex" },
+                    ShaderDefinition{ "ghost_image_fragment.frag", "creation_internal_ghost_image_fragment" })
             });
-
-        const auto lineMaterial = CreateMaterial(
-            ShaderDefinition{ "line_vertex.vert", "creation_internal_line_vertex" },
-            ShaderDefinition{ "line_fragment.frag", "creation_internal_line_fragment" },
-            "creation_internal_line",
-            *reliquary);
-        reliquary->Do(ChangeGridLineMaterial{ lineMaterial });
-
-        const auto entityBoundaryMaterial = CreateMaterial(
-            ShaderDefinition{ "crosshatch_vertex.vert", "creation_internal_crosshatch_vertex" },
-            ShaderDefinition{ "crosshatch_fragment.frag", "creation_internal_crosshatch_fragment" },
-            "creation_internal_crosshatch",
-            *reliquary);
-        const auto selectedEntityBoundaryMaterial = CreateMaterial(
-            ShaderDefinition{ "selected_crosshatch_vertex.vert", "creation_internal_selected_crosshatch_vertex" },
-            ShaderDefinition{ "selected_crosshatch_fragment.frag", "creation_internal_selected_crosshatch_fragment" },
-            "creation_internal_selected_crosshatch",
-            *reliquary);
-        const auto ghostEntityBoundaryMaterial = CreateMaterial(
-            ShaderDefinition{ "ghost_crosshatch_vertex.vert", "creation_internal_ghost_crosshatch_vertex" },
-            ShaderDefinition{ "ghost_crosshatch_fragment.frag", "creation_internal_ghost_crosshatch_fragment" },
-            "creation_internal_ghost_crosshatch",
-            *reliquary);
-        reliquary->Do(InitializeEntityBoundaryRenderInformation{
-            entityBoundaryMaterial, selectedEntityBoundaryMaterial, ghostEntityBoundaryMaterial });
+        
+        reliquary->Do(ChangeGridLineMaterial
+            {
+                .material = createBasicMaterial(
+                    "creation_internal_line",
+                    ShaderDefinition{ "line_vertex.vert", "creation_internal_line_vertex" },
+                    ShaderDefinition{ "line_fragment.frag", "creation_internal_line_fragment" })
+            });
+        
+        reliquary->Do(InitializeEntityBoundaryRenderInformation
+            {
+                .standardMaterial = createBasicMaterial(
+                    "creation_internal_crosshatch",
+                    ShaderDefinition{ "crosshatch_vertex.vert", "creation_internal_crosshatch_vertex" },
+                    ShaderDefinition{ "crosshatch_fragment.frag", "creation_internal_crosshatch_fragment" }),
+                .selectedMaterial = createBasicMaterial(
+                    "creation_internal_selected_crosshatch",
+                    ShaderDefinition{ "selected_crosshatch_vertex.vert", "creation_internal_selected_crosshatch_vertex" },
+                    ShaderDefinition{ "selected_crosshatch_fragment.frag", "creation_internal_selected_crosshatch_fragment" }),
+                .ghostMaterial = createBasicMaterial(
+                    "creation_internal_ghost_crosshatch",
+                    ShaderDefinition{ "ghost_crosshatch_vertex.vert", "creation_internal_ghost_crosshatch_vertex" },
+                    ShaderDefinition{ "ghost_crosshatch_fragment.frag", "creation_internal_ghost_crosshatch_fragment" })
+            });
 
         const auto entityAsset = CreateImage(
             "entity.png",

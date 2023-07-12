@@ -1,0 +1,85 @@
+
+load m_SpeechGraph
+load m_SpeechInput
+load m_SpeechBranch
+load m_SpeechRandomSwitch
+
+// Prototypes should be a list of outputs or a single output
+// This will always return the prototype piece made
+function CreateFromPrototypes(part, prototypes)
+	// Handle non-list
+	use = nil
+	if prototypes.className() != List.className()
+		use = prototypes
+	else
+		// "Unpack" the list
+		if prototypes.len() == 1
+			use = prototypes.first;
+		elif prototypes.len() > 1
+			use = SpeechRandomSwitch(prototypes);
+		end
+	end
+		
+	// Handle nil type
+	if part.typeId() != NilType: part.AddPart(use)
+	
+	return use
+end
+
+class EnterShop(buying, onNoItems)
+	function __call()
+		if self._buying == false and atmos_GetItemCount(atmos_GetEntityTalking()) == 0
+			if self._onNoItems.typeId() != NilType: self._onNoItems()
+			return
+		end
+		
+		atmos_EnterShop(self._buying)
+		
+		while atmos_IsShopActive(): atmos_Suspend()
+	end
+	
+	function Reset()
+		if self._onNoItems provides Reset: self._onNoItems.Reset()
+	end
+	
+	_buying = buying
+	_onNoItems = onNoItems
+end
+
+function CreateShopEnter(input, string, buying, onNoItems, prototypes, outerBranch, loopTo)
+	branch = input.AddPart(Pair(string, SpeechBranch()))
+	
+	exitBranch = nil
+	if onNoItems.typeId() != NilType
+		exitBranch = SpeechBranch(CreateFromPrototypes(nil, onNoItems))
+		exitBranch.AddPart(outerBranch.CreateLoop(loopTo))
+	end
+	
+	branch.AddPart(EnterShop(buying, exitBranch))
+	CreateFromPrototypes(branch, prototypes)
+	
+	branch.AddPart(outerBranch.CreateLoop(loopTo))
+end
+
+// Greetings, onNoItems, onLeave, onEnterBuy, onEnterSell, buySuccess, sellSuccess: array of SpeechOutput (or single SpeechOutput)
+// Enter, buy, sell, leave: string
+function SimpleShopkeeperSpeech(greetings, enter, buy, sell, leave, onNoItems, onLeave, onEnterBuy, onEnterSell, buySuccess, sellSuccess)
+	// Create introductory outputs
+	graph = SpeechGraph()
+	CreateFromPrototypes(graph, greetings)
+	
+	// Setup input
+	input = SpeechInput(nil, enter)
+	graph.AddPart(input)
+	// Buy transaction
+	CreateShopEnter($input, buy, true, nil, onEnterBuy, graph, input)
+	// Sell transaction
+	CreateShopEnter($input, sell, false, onNoItems, onEnterSell, graph, input)
+	// Leave
+	input.AddPart(Pair(leave, CreateFromPrototypes(nil, onLeave)))
+	
+	// Execute the speech graph
+	graph()
+end
+
+export SimpleShopkeeperSpeech

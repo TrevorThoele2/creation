@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Command">
+      <UniqueIdentifier>{c9f132cf-2003-45f1-921f-5b61a5b7b18f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Command">
+      <UniqueIdentifier>{bd64f9ae-56bf-4454-aee2-859ece194844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RenderWindows">
+      <UniqueIdentifier>{6e66c536-d071-4fee-8896-e1eb00cf0a4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RenderWindows">
+      <UniqueIdentifier>{0e9d24b4-6ba3-4b58-806c-1354f489fc43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Selection">
+      <UniqueIdentifier>{ac07b2f9-0763-4bcf-b1af-aa0baa5cedd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Viewport">
+      <UniqueIdentifier>{56d49714-6e65-485e-9ff3-43e10d2bd0f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Viewport">
+      <UniqueIdentifier>{ebcaa712-c860-401f-91de-1bd12619a5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View Managers">
+      <UniqueIdentifier>{dacb57f2-2562-4a14-b7a5-630cb033aa34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View Managers">
+      <UniqueIdentifier>{f57599e0-e32b-43ae-be54-7c2f9f062fb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Widgets">
+      <UniqueIdentifier>{c3079d45-99d3-4a8e-b75f-f967e5583f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Widgets">
+      <UniqueIdentifier>{c7f4afe3-037a-475c-9ddb-8902f58694b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helper">
+      <UniqueIdentifier>{09fb51cd-a099-4cf5-a2cc-917774f92c6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Widgets\Editors">
+      <UniqueIdentifier>{c4fe5cd1-84a8-4d5e-813d-daf640a95cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Widgets\Editors">
+      <UniqueIdentifier>{0b9b6877-8ddf-4e80-a825-ba74617c114c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Selection">
+      <UniqueIdentifier>{3c7db199-6e4e-45ec-b9bb-9d094c38f4e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operations">
+      <UniqueIdentifier>{7aaebab3-1489-4826-b33a-c19094cf7b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operations">
+      <UniqueIdentifier>{669ceacb-cce1-4309-acf0-6687a2262704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataView">
+      <UniqueIdentifier>{88d72dbf-c006-4284-9d5c-1c71a04a461e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataView">
+      <UniqueIdentifier>{3a95b6dd-4dd4-461f-a7d2-c1d21b23131a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atmos Types">
+      <UniqueIdentifier>{087fbd13-4e62-4e1e-bd6b-9093325f98a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atmos Types\Data">
+      <UniqueIdentifier>{04991190-ed9d-4011-b479-4ff4b1b3c82a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Atmos Types">
+      <UniqueIdentifier>{564619aa-ecc7-4692-9f3b-bc7374cd5089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Atmos Types\Data">
+      <UniqueIdentifier>{f1a58af5-75d0-4a26-96b9-bc3abf30cfe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Atmos Types\Data\Breakdowns">
+      <UniqueIdentifier>{f23c05c2-d4ea-4048-bf1e-3154eaccda9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atmos Types\Data\Breakdowns">
+      <UniqueIdentifier>{75808b69-8b63-48d1-816e-884599cbab02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{b3b1f6a3-c83a-404a-b403-7a4cef4cb16b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{ed88870d-5b8a-494e-b312-da4ee7124d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Settings">
+      <UniqueIdentifier>{d81fbf36-a81d-40e2-843f-921ffd162537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Settings">
+      <UniqueIdentifier>{f339c16d-5d5f-493f-8f80-e9313ba6e602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Atmos Types\Data\Build">
+      <UniqueIdentifier>{82e599f9-a27f-4333-b182-699cbd16fb92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Atmos Types\Data\Build">
+      <UniqueIdentifier>{689077a3-5f9d-4a35-aaef-d1727662e7cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandStack.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderWindow.cpp">
+      <Filter>Source Files\RenderWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Atmos Types</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrolledTextWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.cpp">
+      <Filter>Source Files\Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewportStateTiles.cpp">
+      <Filter>Source Files\Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Atmos Types</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewportStateEntities.cpp">
+      <Filter>Source Files\Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="TileViewManager.cpp">
+      <Filter>Source Files\View Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityViewManager.cpp">
+      <Filter>Source Files\View Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteView.cpp">
+      <Filter>Source Files\RenderWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="TileView.cpp">
+      <Filter>Source Files\RenderWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="GridLines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipSlotData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Atmos Types</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManager.cpp">
+      <Filter>Source Files\View Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Selection.cpp">
+      <Filter>Source Files\Selection</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildProcesses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxOperation.cpp">
+      <Filter>Source Files\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewOperation.cpp">
+      <Filter>Source Files\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="CCPOperation.cpp">
+      <Filter>Source Files\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="DataView.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewState.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewStateTiles.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewStateEntities.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewStateAssets.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewStateRegistries.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewStateGameData.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldStartDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityCreator.cpp">
+      <Filter>Source Files\Atmos Types</Filter>
+    </ClCompile>
+    <ClCompile Include="BattlePatternEditor.cpp">
+      <Filter>Source Files\Widgets\Editors</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="FixedPointValidator.cpp">
+      <Filter>Source Files\Atmos Types</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalShaders.cpp">
+      <Filter>Source Files\View Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="DataViewSelection.cpp">
+      <Filter>Source Files\DataView</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownWXItemData.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownAssets.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownAVEffect.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownColor.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownCommon.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownEntities.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownGameData.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownGeneral.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownRegistries.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownSenses.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownTiles.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownParticleFountain.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageAsset.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageRegistry.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsHandler.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="wxTreeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnifiedAccess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridPositionDialog.cpp">
+      <Filter>Source Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsDialog.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsScribe.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildScribe.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownField.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownBase.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownBattlePattern.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownElement.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownCombatChain.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownCombatTransaction.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownNameValuePair.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownVariant.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageEntities.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageField.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldGlobals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownCommonKey.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="StringButtonProperty.cpp">
+      <Filter>Source Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="StringSelectionDialog.cpp">
+      <Filter>Source Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownRegistryReference.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownAssetReference.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageRegistries.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownScriptInstance.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageAsset.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageTile.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageWorldStart.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageGameData.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageGeneral.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageCharacterClassGroup.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageAVEffect.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageCombatChain.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageBattlePattern.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageAction.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageModulators.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBreakdownModulators.cpp">
+      <Filter>Source Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClCompile>
+    <ClCompile Include="ModulatorData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageVariant.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildPackageNameValuePair.cpp">
+      <Filter>Source Files\Atmos Types\Data\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="VariantData.cpp">
+      <Filter>Source Files\Atmos Types\Data</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandStack.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderWindow.h">
+      <Filter>Header Files\RenderWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Selectable.h">
+      <Filter>Header Files\Selection</Filter>
+    </ClInclude>
+    <ClInclude Include="Selection.h">
+      <Filter>Header Files\Selection</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Atmos Types</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrolledTextWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewportStateTiles.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Atmos Types</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewportStateEntities.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityViewManager.h">
+      <Filter>Header Files\View Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TileViewManager.h">
+      <Filter>Header Files\View Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManager.h">
+      <Filter>Header Files\View Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteView.h">
+      <Filter>Header Files\RenderWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="TileView.h">
+      <Filter>Header Files\RenderWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="GridLines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxWidgetsHelper.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBase.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EquipSlotData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Optional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Atmos Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoTextControl.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildProcesses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxOperation.h">
+      <Filter>Header Files\Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveOperation.h">
+      <Filter>Header Files\Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewportMode.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewportStateBase.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="CCPOperation.h">
+      <Filter>Header Files\Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewOperation.h">
+      <Filter>Header Files\Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UndefAssert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteListView.h">
+      <Filter>Header Files\RenderWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="DataView.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewState.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewStateTiles.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewStateEntities.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewStateAssets.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewStateRegistries.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewStateGameData.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="UnifiedAccess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldStartDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityCreator.h">
+      <Filter>Header Files\Atmos Types</Filter>
+    </ClInclude>
+    <ClInclude Include="BattlePatternEditor.h">
+      <Filter>Header Files\Widgets\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedPointValidator.h">
+      <Filter>Header Files\Atmos Types</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalShaders.h">
+      <Filter>Header Files\View Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="DataViewSelection.h">
+      <Filter>Header Files\DataView</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownAssets.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownAVEffect.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownColor.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownCommon.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownEntities.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownGameData.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownGeneral.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownModulators.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownOffset.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownRegistries.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownSenses.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownTiles.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownWXItemData.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownParticleFountain.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageAsset.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageRegistry.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsHandler.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="wxTreeItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridPositionDialog.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsDialog.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsScribe.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildScribe.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownField.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownBase.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownBattlePattern.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownElement.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownCombatChain.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownCombatTransaction.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownRegistryReference.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownNameValuePair.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownVariant.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageEntities.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageField.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldGlobals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownCommonKey.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="StringSelectionDialog.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="StringButtonProperty.h">
+      <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownAssetReference.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageRegistries.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBreakdownScriptInstance.h">
+      <Filter>Header Files\Atmos Types\Data\Breakdowns</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageAsset.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageTile.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageWorldStart.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageGameData.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageGeneral.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackage.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageList.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageCharacterClassGroup.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageAVEffect.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageCombatChain.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageBattlePattern.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageAction.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageRegistryReference.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageOffset.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageModulators.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="ModulatorData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StringGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageVariant.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildPackageNameValuePair.h">
+      <Filter>Header Files\Atmos Types\Data\Build</Filter>
+    </ClInclude>
+    <ClInclude Include="VariantData.h">
+      <Filter>Header Files\Atmos Types\Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

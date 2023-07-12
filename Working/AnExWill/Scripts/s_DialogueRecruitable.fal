@@ -1,0 +1,13 @@
+
+load m_SpeechRecruitable
+load m_SpeechOutput
+
+greetings = SpeechOutput("Hello, I am a recruitable", 1, 10, true, 1)
+alreadyRecruited = SpeechOutput("I am already recruited by you.", 1, 10, true, 1)
+asking = SpeechOutput("Do you want to recruit me?", 1, 10, true, 1)
+yes = "Yes"
+no = "No"
+onYes = SpeechOutput("I will serve you!", 1, 10, true, 1)
+onNo = SpeechOutput("I didn't wanna help you anyway...", 1, 10, true, 1)
+
+SimpleRecruitableSpeech(greetings, alreadyRecruited, asking, yes, no, onYes, onNo)

@@ -1,0 +1,103 @@
+
+load m_FrameTimer
+
+function MoveEntityLeft(entity): atmos_MoveEntityDirection(entity, atmos_Direction.Left)
+function MoveEntityUp(entity): atmos_MoveEntityDirection(entity, atmos_Direction.Up)
+function MoveEntityRight(entity): atmos_MoveEntityDirection(entity, atmos_Direction.Right)
+function MoveEntityDown(entity): atmos_MoveEntityDirection(entity, atmos_Direction.Down)
+
+// Center: atmos_TilePosition
+// Range: numeric with the distance away from the center
+// MoveChangce: chance per 1 second that this will move, given as a number between 0 and 100
+function WanderAI(center, range, moveChance)
+	if center.className() != atmos_TilePosition.className(): raise "WanderAI requires center to be an atmos_TilePosition"
+	
+	if range.typeId() != NumericType: raise "WanderAI requires range to be a numeric"
+	
+	if moveChance.typeId() != NumericType: raise "WanderAI requires moveChance to be a numeric"
+	
+	if moveChance > 100
+		moveChance = 100
+	elif moveChance < 0
+		moveChance = 0
+	end
+	
+	if moveChance == 0: return
+	
+	timer = FrameTimer(1, 1, 1)
+
+	// Find the current entity being used
+	focusedEntity = atmos_GetCurrentAIEntity()
+	if focusedEntity.typeId() == NilType: return
+
+	while true
+		while not atmos_CanMoveEntity(focusedEntity): atmos_Suspend()
+		
+		// Determine if this should move
+		random = atmos_GetRandomUint8(0, 100)
+		
+		if random > moveChance
+			timer.Start()
+			while not timer.HasReachedGoal()
+				atmos_Suspend()
+			end
+			
+			continue
+		end
+		
+		// Hold the focused entity's position
+		entityPosition = atmos_GetEntityPosition(focusedEntity)
+		
+		// Hold positions for use later to move the entity
+		slots = List()
+		
+		// Check can move left
+		if (entityPosition.col - 1 >= center.col - range) and atmos_CanMoveEntity(focusedEntity, atmos_TilePosition(entityPosition.col - 1, entityPosition.row, entityPosition.z))
+			slots.append(MoveEntityLeft)
+		end
+		
+		// Check can move up
+		if (entityPosition.row - 1 >= center.row - range) and atmos_CanMoveEntity(focusedEntity, atmos_TilePosition(entityPosition.col, entityPosition.row - 1, entityPosition.z))
+			slots.append(MoveEntityUp)
+		end
+		
+		// Check can move right
+		if (entityPosition.col + 1 <= center.col + range) and atmos_CanMoveEntity(focusedEntity, atmos_TilePosition(entityPosition.col + 1, entityPosition.row, entityPosition.z))
+			slots.append(MoveEntityRight)
+		end
+		
+		// Check can move down
+		if (entityPosition.row + 1 <= center.row + range) and atmos_CanMoveEntity(focusedEntity, atmos_TilePosition(entityPosition.col, entityPosition.row + 1, entityPosition.z))
+			slots.append(MoveEntityDown)
+		end
+		
+		length = slots.len()
+		
+		// If there are no valid places to move, then suspend a frame and then start over
+		if length == 0
+			atmos_Suspend()
+			continue
+		// If there is only one place to move, then just move
+		elif length == 1
+			slots.front()()
+			continue
+		end
+		
+		// 2, 3, or 4 slots
+		
+		// Generate a random number 
+		random = atmos_GetRandomUint8(0, length - 1)
+		loopVar = 0
+		for i in slots
+			if loopVar == random
+				i(focusedEntity)
+				atmos_Suspend()
+				break
+			end
+			
+			++loopVar
+		end
+	end
+end
+
+export WanderAI

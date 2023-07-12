@@ -1,0 +1,35 @@
+
+// Determiner: function returning the ID of the speech part to choose
+// Parts: dictionary of IDs returned by Determiner -> functions
+class SpeechSwitch(determiner, parts)
+	function __call()
+		selected = self._determiner()
+		self._parts[selected]()
+	end
+	
+	function Reset()
+		for key, value in self._parts
+			if value provides Reset: value.Reset()
+		end
+	end
+	
+	// Returns copy of the added part
+	function AddPart(id, part)
+		self._parts += [id => part]
+		return self._parts.back()
+	end
+	
+	function Size()
+		return self._parts.len()
+	end
+	
+	_determiner = determiner
+	_parts = [ => ]
+
+	init
+		if parts.typeId() != DictionaryType: return self
+		self._parts = parts
+	end
+end
+
+export SpeechSwitch

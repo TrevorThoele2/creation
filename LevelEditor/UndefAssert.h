@@ -1,0 +1,4 @@
+#pragma once
+
+#undef LEVEL_EDITOR_ASSERT
+#undef LEVEL_EDITOR_ASSERT_MESSAGE

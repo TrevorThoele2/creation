@@ -446,9 +446,6 @@
     <ClCompile Include="TreeElementBase.cpp">
       <Filter>Source Files\Editing\Infrastructure\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="MaterialAssetPassData.cpp">
-      <Filter>Source Files\Editing\Data\Asset</Filter>
-    </ClCompile>
     <ClCompile Include="NexusSelection.cpp">
       <Filter>Source Files\Editing\Infrastructure\Nexus\Selection</Filter>
     </ClCompile>
@@ -512,7 +509,7 @@
     <ClCompile Include="EntityPrototypeData.cpp">
       <Filter>Source Files\Editing\Data\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="AtmosRender.cpp">
+    <ClCompile Include="AtmosAsset.cpp">
       <Filter>Source Files\Atmos</Filter>
     </ClCompile>
     <ClCompile Include="ScriptData.cpp">
@@ -832,9 +829,6 @@
     <ClInclude Include="TreeElement.h">
       <Filter>Header Files\Editing\Infrastructure\Tree</Filter>
     </ClInclude>
-    <ClInclude Include="MaterialAssetPassData.h">
-      <Filter>Header Files\Editing\Data\Asset</Filter>
-    </ClInclude>
     <ClInclude Include="wxTreeItemIdHash.h">
       <Filter>Header Files\wxWidgets</Filter>
     </ClInclude>
@@ -952,7 +946,7 @@
     <ClInclude Include="EntityPrototypeData.h">
       <Filter>Header Files\Editing\Data\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="AtmosRender.h">
+    <ClInclude Include="AtmosAsset.h">
       <Filter>Header Files\Atmos</Filter>
     </ClInclude>
     <ClInclude Include="ScriptData.h">

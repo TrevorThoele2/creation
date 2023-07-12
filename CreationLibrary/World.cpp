@@ -4,7 +4,7 @@
 #include "OutputBuildFile.h"
 #include "FilePaths.h"
 
-#include "AtmosRender.h"
+#include "AtmosAsset.h"
 
 #include <Atmos/InvalidSignature.h>
 #include <Atmos/OutputWorldFile.h>
@@ -28,18 +28,29 @@ namespace Creation
 
     void World::InsertDefaults()
     {
-        assets.shaderAssets.push_back(
-            { std::filesystem::current_path() / "shaders" / (defaultImageVertexShader + ".vert") });
-        assets.shaderAssets.push_back(
-            { std::filesystem::current_path() / "shaders" / (defaultImageFragmentShader + ".frag") });
-        assets.materialAssets.push_back({
-            atmosDefaultImageMaterialName,
+        assets.scriptAssets.emplace_back(
+            Inscription::File::Path{ std::filesystem::current_path() / "scripts" / (defaultMaterialScript + ".ts") });
+        assets.shaderAssets.emplace_back(
+            Inscription::File::Path{ std::filesystem::current_path() / "shaders" / (defaultVertexShader + ".vert") });
+        assets.shaderAssets.emplace_back(
+            Inscription::File::Path{ std::filesystem::current_path() / "shaders" / (defaultFragmentShader + ".frag") });
+        assets.materialAssets.emplace_back(
+            atmosDefaultMaterialName,
+            defaultMaterialScript,
+            String("main"),
+            std::list
             {
+                Editing::Data::Variant
                 {
-                    defaultImageVertexShader,
-                    defaultImageFragmentShader
+                    Editing::Data::VariantType::String,
+                    defaultVertexShader,
+                },
+                Editing::Data::Variant
+                {
+                    Editing::Data::VariantType::String,
+                    defaultFragmentShader
                 }
-            } });
+            });
     }
 
     void World::ChangeField(Atmos::World::FieldID fieldID)

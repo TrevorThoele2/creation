@@ -1,0 +1,4 @@
+
+load m_AIPatrol
+
+PatrolAI([atmos_TilePosition(-7, -8, 0), atmos_TilePosition(-7, -2, 0), atmos_TilePosition(-3, -2, 0)], PatrolType.Loop)

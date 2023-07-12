@@ -462,6 +462,7 @@ namespace Creation
             stack->state.vulkanGraphicsManager,
             stack->state.sdlTextManager,
             stack->state.realAssetResourceManager,
+            stack->state.javaScriptManager,
             Atmos::Spatial::Size2D{ 10, 10 },
             *stack->state.logger,
             reinterpret_cast<HWND>(viewport->GetHandle()));

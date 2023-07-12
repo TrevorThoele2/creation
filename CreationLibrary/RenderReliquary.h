@@ -4,6 +4,7 @@
 #include <Atmos/GraphicsManager.h>
 #include <Atmos/TextManager.h>
 #include <Atmos/AssetResourceManager.h>
+#include <Atmos/ScriptManager.h>
 
 namespace Creation
 {
@@ -11,6 +12,7 @@ namespace Creation
         Atmos::Render::GraphicsManager& graphicsManager,
         Atmos::Render::TextManager& textManager,
         Atmos::Asset::Resource::Manager& assetResourceManager,
+        Atmos::Scripting::Manager& scriptManager,
         Atmos::Spatial::Size2D clientSize,
         Atmos::Logging::Logger& logger,
         void* hwnd);

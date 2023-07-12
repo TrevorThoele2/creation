@@ -102,8 +102,9 @@ namespace Creation
         void Validate(Saves& saves);
         void Validate(SaveAssets& saves, const String& assetType);
     private:
-        static inline const String defaultImageVertexShader = "image_vertex";
-        static inline const String defaultImageFragmentShader = "image_fragment";
+        static inline const String defaultVertexShader = "vertex";
+        static inline const String defaultFragmentShader = "fragment";
+        static inline const String defaultMaterialScript = "basic_material_script";
     };
     
     template<class T>

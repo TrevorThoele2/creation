@@ -15,6 +15,7 @@ namespace Creation::Editing
             File::Path filePath;
         public:
             ScriptAsset() = default;
+            explicit ScriptAsset(const File::Path& filePath);
             ScriptAsset(const ScriptAsset& arg) = default;
             ScriptAsset& operator=(const ScriptAsset& arg) = default;
 

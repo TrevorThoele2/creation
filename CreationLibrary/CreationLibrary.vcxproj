@@ -86,7 +86,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\sdl_mixer\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>..\..\chroma;..\..\inscription;..\..\arca;..\..\atmos;..\..\externaldependencies\wxwidgets\lib\vc_lib\mswud;..\..\externaldependencies\wxwidgets\include;..\..\externaldependencies\function2\include;..\..\externaldependencies\boost;..\..\externaldependencies\vulkan\Include;..\..\externaldependencies\freeimage\Source;..\..\externaldependencies\sdl_ttf\include;..\..\externaldependencies\sdl2\include;..\..\externaldependencies\glm;..\..\externaldependencies\v8\v8\include;$(IncludePath)</IncludePath>
@@ -203,7 +203,7 @@
     <ClCompile Include="AssetData.cpp" />
     <ClCompile Include="AssetEditingMode.cpp" />
     <ClCompile Include="AssetsRoot.cpp" />
-    <ClCompile Include="AtmosRender.cpp" />
+    <ClCompile Include="AtmosAsset.cpp" />
     <ClCompile Include="BoundsData.cpp" />
     <ClCompile Include="BuildContext.cpp" />
     <ClCompile Include="BuildFileSignature.cpp" />
@@ -240,7 +240,6 @@
     <ClCompile Include="EntityRenderInformationCurator.cpp" />
     <ClCompile Include="InputSettingsFile.cpp" />
     <ClCompile Include="ImageCoreData.cpp" />
-    <ClCompile Include="MaterialAssetPassData.cpp" />
     <ClCompile Include="MutationCurator.cpp" />
     <ClCompile Include="NexusNode.cpp" />
     <ClCompile Include="NullEditingMode.cpp" />
@@ -308,7 +307,7 @@
     <ClInclude Include="AssetEditingMode.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="AssetsRoot.h" />
-    <ClInclude Include="AtmosRender.h" />
+    <ClInclude Include="AtmosAsset.h" />
     <ClInclude Include="AutoNexus.h" />
     <ClInclude Include="AutoProperty.h" />
     <ClInclude Include="BoundsData.h" />
@@ -359,7 +358,6 @@
     <ClInclude Include="InitializeBoundaryRenderInformation.h" />
     <ClInclude Include="InitializeEntityRenderInformation.h" />
     <ClInclude Include="ListData.h" />
-    <ClInclude Include="MaterialAssetPassData.h" />
     <ClInclude Include="NexusSelectionExceptions.h" />
     <ClInclude Include="SequenceNexusCommon.h" />
     <ClInclude Include="Nexus.h" />

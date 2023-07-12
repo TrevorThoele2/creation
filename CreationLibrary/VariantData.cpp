@@ -4,7 +4,11 @@ namespace Creation::Editing
 {
     namespace Data
     {
-        Atmos::Variant Variant::Build(Build::Context& context) const
+        Variant::Variant(VariantType type, const String& value) :
+            type(type), value(value)
+        {}
+
+        Atmos::Variant Variant::Build() const
         {
             switch (type)
             {
