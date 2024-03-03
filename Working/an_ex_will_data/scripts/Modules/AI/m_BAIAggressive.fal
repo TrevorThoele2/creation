@@ -1,0 +1,12 @@
+
+load m_BAIBase;
+
+function AggressiveBattleAI()
+	def focusedEntity = Atmos_Caller.GetEntity();
+	while true
+		Atmos_LogMessage("Executed")
+		BattleAI_Attack(focusedEntity, atmosBattle_FindClosestPlayer(atmos_GetEntityPosition(focusedEntity)))
+	end
+end
+
+export AggressiveBattleAI;

@@ -1,0 +1,15 @@
+
+load m_SpeechRecruitable;
+load m_SpeechOutput;
+
+def endingWait = AtmosTime_Value(Atmos_FixedPoint.FromDecimal(10.0), AtmosTime_Epoch.Seconds);
+
+def greetings = SpeechOutput("Hello, I am a recruitable", 1, 10, true, endingWait);
+def alreadyRecruited = SpeechOutput("I am already recruited by you.", 1, 10, true, endingWait);
+def asking = SpeechOutput("Do you want to recruit me?", 1, 10, true, endingWait);
+def yes = "Yes";
+def no = "No";
+def onYes = SpeechOutput("I will serve you!", 1, 10, true, endingWait);
+def onNo = SpeechOutput("I didn't wanna help you anyway...", 1, 10, true, endingWait);
+
+SimpleRecruitableSpeech(greetings, alreadyRecruited, asking, yes, no, onYes, onNo);

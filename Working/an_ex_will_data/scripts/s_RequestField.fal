@@ -1,0 +1,6 @@
+
+function RequestField(fieldId)
+	AtmosWorld_RequestField(fieldId);
+end
+
+export RequestField;

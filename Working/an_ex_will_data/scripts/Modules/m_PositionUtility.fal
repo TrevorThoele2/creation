@@ -1,0 +1,42 @@
+
+def TILE_WIDTH = 32;
+
+function CenterOfGridPositions(positions)
+	if positions.len() <= 0: return;
+
+	def nearTopLeft = positions[0].clone();
+	def nearBottomRight = positions[0].clone();
+	def farTopLeft = positions[0].clone();
+	
+	for curPosition in positions
+		if curPosition.x < nearTopLeft.x
+			nearTopLeft.x = curPosition.x;
+		elif curPosition.x > nearBottomRight.x
+			nearBottomRight.x = curPosition.x;
+		end
+		
+		if curPosition.y < nearTopLeft.y
+			nearTopLeft.y = curPosition.y;
+		elif curPosition.y > nearBottomRight.y
+			nearBottomRight.y = curPosition.y;
+		end
+		
+		if curPosition.z < nearTopLeft.z
+			nearTopLeft.z = curPosition.z;
+		elif curPosition.z > farTopLeft.z
+			farTopLeft.z = curPosition.z;
+		end
+	end
+	
+	def FindMidpoint = { left, right =>
+		return (right - left) / 2;
+	}
+	
+	return AtmosPosition_Position3D(
+		FindMidpoint(nearTopLeft.x, nearBottomRight.x) * TILE_WIDTH,
+		FindMidpoint(nearTopLeft.y, nearBottomRight.y) * TILE_WIDTH,
+		FindMidpoint(nearTopLeft.z, farTopLeft.z) * TILE_WIDTH);
+end
+
+export TILE_WIDTH;
+export CenterOfGridPositions;

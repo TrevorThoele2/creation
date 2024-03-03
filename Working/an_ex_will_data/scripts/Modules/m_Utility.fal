@@ -1,0 +1,36 @@
+
+function IsNil(obj)
+	return obj.typeId() == NilType;
+end
+
+function IsBoolean(obj)
+	return obj.typeId() == BooleanType;
+end
+
+function IsNumeric(obj)
+	return obj.typeId() == NumericType;
+end
+
+function IsString(obj)
+	return obj.typeId() == StringType;
+end
+
+function IsArray(obj)
+	return obj.typeId() == ArrayType;
+end
+
+function IsDictionary(obj)
+	return obj.typeId() == DictionaryType;
+end
+
+function IsClass(obj, classT)
+	return obj.className() == classT.className();
+end
+
+export IsNil;
+export IsBoolean;
+export IsNumeric;
+export IsString;
+export IsArray;
+export IsDictionary;
+export IsClass;

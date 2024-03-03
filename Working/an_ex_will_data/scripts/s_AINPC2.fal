@@ -1,0 +1,4 @@
+
+load m_AIPatrol;
+
+PatrolAI([Atmos_GridPosition(-7, -8, 0), Atmos_GridPosition(-7, -2, 0), Atmos_GridPosition(-3, -2, 0)], PatrolType.Loop);

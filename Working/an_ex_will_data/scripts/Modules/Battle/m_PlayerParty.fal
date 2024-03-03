@@ -1,0 +1,56 @@
+
+load m_Utility;
+
+object PlayerParty
+	function Add(entity)
+		self._SetupEntity(entity);
+	end
+	
+	function Remove(entity)
+		self._TeardownEntity(entity);
+	end
+	
+	function IsIn(entity)
+		return self._DoesEntityHavePieces(entity);
+	end
+	
+	function FindAll()
+		return AtmosEntity_FindAllWithTag(self._tag);
+	end
+	
+	_tag = "InParty";
+	
+	function _SetupEntity(entity)
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+	
+		generalComponent.TagAs(self._tag);
+	end
+	
+	function _TeardownEntity(entity)
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+		
+		generalComponent.RemoveTag(self._tag);
+	end
+	
+	function _DoesEntityHavePieces(entity)
+		def generalComponent = self._ExtractRequiredGeneralComponent(entity);
+		
+		def isTagged = generalComponent.IsTaggedAs(self._tag);
+		
+		return isTagged;
+	end
+	
+	function _ExtractRequiredGeneralComponent(entity)
+		def generalComponent = entity.FindComponent(AtmosEntity_ComponentType.General);
+		
+		if IsNil(generalComponent)
+			Atmos_Log("Cannot use object with player party.",
+				Atmos_LogType.ErrorModerate,
+				[Atmos_NameValuePair("Entity", entity.describe())]);
+		end
+		
+		return generalComponent;
+	end
+end
+
+export PlayerParty;

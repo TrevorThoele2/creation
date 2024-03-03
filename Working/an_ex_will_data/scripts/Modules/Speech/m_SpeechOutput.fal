@@ -1,0 +1,57 @@
+
+// Output: string
+// Speed: float
+// UseMultiplier: float
+// Reset: bool. If true, resets the speech handler's string
+// EndingWait: AtmosTime_Value
+class SpeechOutput(output, speed, useMultiplier, reset, endingWait)
+	function __call()
+		// Calculates the character delta every frame
+		def timeTaken = 0.0;
+		def charCount = 0;
+		def length = len(self._output);
+		
+		def timer = AtmosTime_FrameTimer(self._endingWait);
+		timer.Start();
+		
+		loop
+			timeTaken += timer.GetElapsed().value.ToDecimal() * ((AtmosInput_IsActionActive(AtmosInput_Action.Use)) ? self._useMultiplier : 1.0);
+			
+			def numberOfCharacters = floor(timeTaken / (1 / self._speed));
+			
+			// If there are actually characters to output, then do so
+			if numberOfCharacters > 0
+				timeTaken = 0.0;
+				timer.Start();
+				if charCount + numberOfCharacters > length : numberOfCharacters = length - charCount;
+			
+				// Output the characters
+				AtmosSpeech_AppendCharacters(self._output[charCount : charCount + numberOfCharacters]);
+				// Increment the char count
+				charCount += numberOfCharacters;
+				
+				// If has finished, then break out of the loop
+				if charCount == length : break;
+			end
+			
+			Atmos_Suspend();
+		end
+		
+		timer.Start();
+		while not timer.HasReachedGoal()
+			if AtmosInput_IsActionPressed(AtmosInput_Action.Use) : break;
+		
+			Atmos_Suspend();
+		end
+		
+		if self._reset == true : AtmosSpeech_ClearCharacters();
+	end
+	
+	_output = output;
+	_speed = speed;
+	_useMultiplier = useMultiplier;
+	_reset = reset;
+	_endingWait = endingWait;
+end
+
+export SpeechOutput;

@@ -1,0 +1,120 @@
+
+load m_Utility;
+
+// Parts: List of speech parts
+class SpeechBranch(parts)
+	function __call()
+		if not self._IsCurPosValid() : return nil;
+	
+		self._SetNextCurPos();
+		self._curPos.value()();
+	
+		// Execute while current position is an iterator
+		while IsClass(self._next, Iterator)
+			self._curPos = self._next;
+			self._SetNextCurPos();
+			self._curPos.value()();
+		end
+	end
+	
+	function Reset()
+		if self.Size() == 0
+			self._curPos = nil;
+			return;
+		end
+		
+		// Put current position at front
+		self._curPos = self._parts.first();
+		// This will stop execution of this branch
+		self._next = nil;
+		
+		// Reset all parts
+		for i in self._parts
+			if i provides Reset : i.Reset();
+		end
+	end
+	
+	// Returns copy of the added part
+	function AddPart(part)
+		self._parts.push(part);
+		self._CurPosCheck();
+		return self._parts.back();
+	end
+	
+	function Size()
+		return self._parts.len();
+	end
+	
+	// Part MUST be an iterator
+	function SkipTo(part)
+		self.Reset();
+		self._next = part;
+	end
+	
+	// Do not create a SpeechBranchLoop outside of this function
+	// Will return the SpeechBranchLoop itself. Add it as a part in the place you want
+	function CreateLoop(part)
+		def itr = self._parts.first();
+		loop
+			if itr.value() == part: return SpeechBranchLoop(self, itr);
+		end not itr.next()
+	end
+	
+	_parts = nil;
+	// This will always be nil or Iterator
+	_curPos = nil;
+	_next = nil;
+	
+	init
+		if IsNil(parts)
+			self._parts = List();
+			return self;
+		elif IsClass(parts, List)
+			self._parts = List(parts);
+		else	
+			// Parts is List
+			self._parts = parts;
+		end
+		
+		self._CurPosCheck();
+	end
+	
+	// Check if the current pos needs to be put in the front
+	function _CurPosCheck()
+		if self.Size() == 0 : return;
+		
+		// Check if the current position is nil
+		if not self._IsCurPosValid()
+			self._curPos = self._parts.first();
+		end
+	end
+	
+	function _IsCurPosValid()
+		return IsClass(self._curPos, Iterator);
+	end
+	
+	function _SetNextCurPos()
+		if self._curPos.hasNext()
+			def itr = self._curPos.clone();
+			itr.next();
+			self._next = itr;
+		else
+			self._next = nil;
+		end
+	end
+end
+
+export SpeechBranch
+
+// MAKE THIS FROM THE BRANCH'S CREATELOOP FUNCTION
+// Jumps to a part in the speech branch
+class SpeechBranchLoop(branch, itr)
+	function __call()
+		self._branch.SkipTo(self._itr);
+	end
+	
+	_branch = branch;
+	_itr = itr;
+end
+
+export SpeechBranchLoop;

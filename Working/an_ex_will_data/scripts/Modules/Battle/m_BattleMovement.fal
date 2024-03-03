@@ -1,0 +1,9 @@
+
+load m_BattleLogic;
+
+class BattleMovement from BattleLogic
+	function _WorkImpl()
+	end
+end
+
+export BattleMovement;

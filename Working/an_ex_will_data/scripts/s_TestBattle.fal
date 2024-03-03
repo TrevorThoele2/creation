@@ -1,0 +1,59 @@
+
+load m_BattleManager;
+load m_PlayerParty;
+
+function MakePosition(x, y, z)
+	return AtmosPosition_GridPosition(x, y, z);
+end
+				 
+function FlattenTeam(team)
+	def ret = [];
+	
+	def count = 0;
+	for teamLoop in team
+		for squadLoop in teamLoop
+			if squadLoop.IsNull() : continue;
+			ret += squadLoop.clone();
+			++count;
+		end
+	end
+	
+	return ret;
+end
+
+function Start()
+	def placementPositions = [MakePosition(0, 0, 0),
+							  MakePosition(1, 0, 0),
+							  MakePosition(0, 1, 0),
+							  MakePosition(1, 1, 0)];
+
+	def playersToPlace = PlayerParty.FindAll();
+							  
+	BattleManager.SetPositions(placementPositions);
+	BattleManager.SetPlayersToPlace(playersToPlace);
+
+	def avatar = AtmosEntity_GetAvatar();
+	
+	def avatarMovementComponent = avatar.FindComponent(AtmosEntity_ComponentType.Movement);
+	avatarMovementComponent.Disable();
+	def avatarSenseComponent = avatar.FindComponent(AtmosEntity_ComponentType.Sense);
+	avatarSenseComponent.Disable();
+
+	AtmosCamera_Unattach();
+	
+	BattleManager.StartLoop();
+end
+
+function Stop()
+	def avatar = AtmosEntity_GetAvatar();
+	
+	def avatarMovementComponent = avatar.FindComponent(AtmosEntity_ComponentType.Movement);
+	avatarMovementComponent.Enable();
+	def avatarSenseComponent = avatar.FindComponent(AtmosEntity_ComponentType.Sense);
+	avatarSenseComponent.Enable();
+	
+	AtmosCamera_AttachToEntity(avatar);
+end
+
+export Start;
+export Stop;

@@ -1,0 +1,8 @@
+
+class SpeechExit()
+	function __call()
+		AtmosSpeech_Leave();
+	end
+end
+
+export SpeechExit;
